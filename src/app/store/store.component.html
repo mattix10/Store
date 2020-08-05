@@ -18,4 +18,11 @@ liczba produktów: {{products.length}}
     </h5>
     <div class="card-text p-a-2">{{product.description}}</div>
   </div>
+  <div class="form-inline pull-xs-left m-r-1">
+    <select class="form-control" [value]="productsPerPage"
+        (change)="changePageSize($event.target.value)">
+      <option value="2">2 na stronie</option>
+      <option value="3">3 na stronie</option>
+    </select>
+  </div>
 </div>
