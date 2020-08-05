@@ -9,6 +9,7 @@ import { ProductRepository } from '../model/product.repository';
 
 export class StoreComponent {
   public selectedCategory = null;
+  public productsPerPage = 1;
 
   constructor(private repository: ProductRepository) {}
 
@@ -22,6 +23,10 @@ export class StoreComponent {
 
   changeCategory(newCategory?: string) {
     this.selectedCategory = newCategory;
+  }
+
+  changePageSize(newSize: number) {
+    this.productsPerPage = Number(newSize);
   }
 
 }
