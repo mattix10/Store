@@ -2,3 +2,15 @@ Menu:
 
 liczba kategorii: {{categories.length}}
 liczba produktów: {{products.length}}
+
+<div class="col-xs-9 p-a-1">
+  <div *ngFor="let product of products" class="card">
+    <h5 class="card-header">
+      {{product.name}}
+      <span class="">Cena:
+        {{product.price | currency:"zł": true:'2.2-2'}}
+      </span>
+    </h5>
+    <div class="card-text p-a-2">{{product.description}}</div>
+  </div>
+</div>
