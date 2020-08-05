@@ -14,4 +14,8 @@ export class StoreComponent {
     return this.repository.getProducts();
   }
 
+  get categories(): string[] {
+    return this.repository.getCategories();
+  }
+
 }
