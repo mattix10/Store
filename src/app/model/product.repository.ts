@@ -14,4 +14,9 @@ export class ProductRepository {
         .filter((c, index, array) => array.indexOf(c) == index).sort();
     });
   }
+
+  getProducts(category: string): Product[] {
+    return this.products
+      .filter(p => category == null || category == p.category);
+  }
 }
