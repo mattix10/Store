@@ -15,7 +15,7 @@ export class ProductRepository {
     });
   }
 
-  getProducts(category: string): Product[] {
+  getProducts(category: string = null): Product[] {
     return this.products
       .filter(p => category == null || category == p.category);
   }
