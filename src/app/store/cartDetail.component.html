@@ -27,7 +27,7 @@ Zawartość koszyka:
           {{queue.product.price}}
         </td>
         <td class="text-xs-center">
-          <button class="btn btn-sm btn-danger">Usuń</button>
+          <button class="btn btn-sm btn-danger" (click)="cart.removeLine(queue.product.id)">Usuń</button>
         </td>
       </tr>
     </tbody>
