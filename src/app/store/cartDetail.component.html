@@ -1,1 +1,43 @@
 Zawartość koszyka:
+<div class="m-a-1">
+  <h2 class="text-xs-center">Koszyk</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Ilość</th>
+        <th>Produkt</th>
+        <th class="text-xs-right">Cena</th>
+        <th class="text-xs-right">Wartość</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="cart.queues.length === 0">
+        <td colspan="4" class="text-cs-center">
+          Koszyk jest pusty
+        </td>
+      </tr>
+      <tr *ngFor="let queue of cart.queues">
+        <td>
+          <input type="number" class="form-control-sm"
+          [value]="queue.quantity"
+          (change)="cart.updateQuantity(queue.product, $event.target.value)"/>
+        </td>
+        <td>{{queue.product.name}}</td>
+        <td class="text-xs-right">
+          {{queue.product.price}}
+        </td>
+        <td class="text-xs-center">
+          <button class="btn btn-sm btn-danger">Usuń</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="text-xs-right">Razem:</td>
+        <td class="text-xs-right">
+          {{cart.cartPrice}}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
