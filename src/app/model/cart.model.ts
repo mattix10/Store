@@ -14,6 +14,16 @@ export class Cart {
     } else {
       this.queues.push(new CartLine(product, quantity));
     }
+    this.recalculate();
+  }
+
+  private recalculate() {
+    this.itemCount = 0;
+    this.cartPrice = 0;
+    this.queues.forEach(q => {
+      this.itemCount += q.quantity;
+      this.cartPrice += (q.quantity * q.product.price);
+    });
   }
 }
 
