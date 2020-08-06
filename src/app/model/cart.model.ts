@@ -25,6 +25,14 @@ export class Cart {
       this.cartPrice += (q.quantity * q.product.price);
     });
   }
+
+  updateQuantity(product: Product, quantity: number) {
+    const queue = this.queues.find(q => q.product.id === product.id);
+    if (queue !== undefined) {
+      queue.quantity = Number(quantity);
+    }
+    this.recalculate();
+  }
 }
 
 export class CartLine {
