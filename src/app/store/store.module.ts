@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ModelModule } from '../model/model.module';
 import { StoreComponent } from './store.component';
 import { FormsModule } from '@angular/forms';
+import { CartSummaryComponent } from './cartSummary.component';
 
 
 @NgModule({
   imports: [ModelModule, BrowserModule, FormsModule],
-  declarations: [StoreComponent],
+  declarations: [StoreComponent, CartSummaryComponent],
   exports: [StoreComponent]
 })
 
