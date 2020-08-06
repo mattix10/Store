@@ -39,6 +39,12 @@ export class Cart {
     this.queues.splice(index, 1);
     this.recalculate();
   }
+
+  clear() {
+    this.queues = [];
+    this.itemCount = 0;
+    this.cartPrice = 0;
+  }
 }
 
 export class CartLine {
