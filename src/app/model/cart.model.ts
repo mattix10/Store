@@ -33,8 +33,16 @@ export class Cart {
     }
     this.recalculate();
   }
+
+  removeLine(id: number) {
+    const index = this.queues.findIndex(q => q.product.id === id);
+    this.queues.splice(index, 1);
+    this.recalculate();
+  }
 }
 
 export class CartLine {
-  constructor(public product: Product, public quantity: number) {}
+  constructor(public product: Product, public quantity: number) {
+
+  }
 }
