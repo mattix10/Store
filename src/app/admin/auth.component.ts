@@ -20,4 +20,6 @@ export class AuthComponent {
       this.errorMessage = 'Nieprawdiłowe dane.';
     }
   }
+
+  logout() {}
 }
