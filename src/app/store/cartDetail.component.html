@@ -42,5 +42,6 @@ Zawartość koszyka:
   </table>
 </div>
 <div lass="text-xs-center">
-  <button class="btn btn-primary" [routerLink]="['/store']">Kontynuuj zakupy</button>
+  <button class="btn btn-primary" routerLink="/store">Kontynuuj zakupy</button>
+  <button class="btn btn-secondary" routerLink="/checkout" [disabled]="cart.queues.length === 0">Do kasy</button>
 </div>
