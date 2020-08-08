@@ -11,7 +11,8 @@ import { AuthService } from './auth.service';
 @NgModule({
   imports: [HttpClientModule],
   providers: [ProductRepository, Cart, Order, OrderRepository,
-    AuthService, { provide: DataSource, useClass: RestDataSource }]
+    AuthService, { provide: DataSource, useClass: RestDataSource },
+    RestDataSource]
 })
 
 export class ModelModule {}
