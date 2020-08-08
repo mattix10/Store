@@ -1,1 +1,21 @@
-Funkcje administracyjne
+<div class="navbar navbar-inverse bg-info">
+  <a class="navbar-brand">Administracja sklepem sportowym</a>
+</div>
+<div class="m-t-1">
+  <div class="col-xs-3">
+    <button class="btn btn-primary btn-block"
+            routerLink="/admin/main/products"
+            routerLinkActive="active">
+        Produkty
+    </button>
+    <button class="btn btn-info btn-block"
+            routerLink="/admin/main/orders"
+            routerLinkActive="active">
+        Zamówienia
+    </button>
+    <button class="btn btn-danger btn-block" (click)="logout()">
+      Wyloguj
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
