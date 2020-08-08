@@ -7,7 +7,7 @@ import { Order } from './order.model';
 import { map } from 'rxjs/operators';
 
 const PROTOCOL = 'http';
-const PORT = 3000;
+const PORT = 3500;
 
 @Injectable()
 export class RestDataSource {
@@ -21,6 +21,7 @@ export class RestDataSource {
   authenticate(user: string, pass: string): Observable<boolean> {
     return this.http.post<any>(this.baseUrl + 'login', {
       name: user, password: pass }).pipe(map(response => {
+        console.log(response);
         this.auth_token = response.success ? response.token : null;
         return response.success;
       }));
