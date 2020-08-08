@@ -41,6 +41,11 @@ export class RestDataSource {
       product, this.getOptions());
   }
 
+  deleteProduct(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.baseUrl}products/${id}`,
+      this.getOptions());
+  }
+
   saveOrder(order: Order): Observable<Order> {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
