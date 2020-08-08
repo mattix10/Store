@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from './product.model';
 import { Cart } from './cart.model';
@@ -31,7 +31,20 @@ export class RestDataSource {
     return this.http.get<Product[]>(this.baseUrl + 'products');
   }
 
+  saveProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl + 'products',
+    product, this.getOptions());
+  }
+
   saveOrder(order: Order): Observable<Order> {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
+  }
+
+  private getOptions() {
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer<${this.auth_token}>`
+      })
+    }
   }
 }
