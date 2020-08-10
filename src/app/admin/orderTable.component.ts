@@ -20,4 +20,8 @@ export class OrderTableComponent {
     order.shipped = true;
     this.repository.updateOrder(order);
   }
+
+  delete(id: number) {
+    this.repository.deleteOrder(id);
+  }
 }
