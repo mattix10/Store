@@ -1,0 +1,66 @@
+.nav-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.nav-container > div {
+  margin: 10px;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.brand-logo {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+}
+
+.brand-logo span {
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 24px;
+  margin: 0 30px;
+}
+
+.links-container {
+  flex-grow: 8;
+  display: block;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 10px;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.links-categories {
+  color: black;
+}
+
+.links-categories:hover {
+  text-decoration: underline;
+}
+
+.material-icons:hover {
+  transform:translateY(-10px);
+  transition: all 0.2s ease-in-out ;
+}
+
+.icon-container {
+  flex-grow: 1
+}
+
+.nav-icon span {
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: black;
+}
+
