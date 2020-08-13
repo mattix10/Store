@@ -1,0 +1,27 @@
+<div class="grid-container">
+  <div class="grid-item">
+      <mat-nav-list>
+        <h2 matLine>PRODUKTY</h2>
+        <a mat-list-item  *ngFor="let link of categories"> {{ link }} </a>
+      </mat-nav-list>
+  </div>
+  <div class="grid-item">
+    <mat-nav-list>
+      <h2 matLine>O FIRMIE</h2>
+      <a mat-list-item *ngFor="let link of companyLinks"> {{ link }} </a>
+    </mat-nav-list>
+  </div>
+  <div class="grid-item">
+    <mat-nav-list>
+      <h2 matLine>WSPARCIE</h2>
+      <a mat-list-item  *ngFor="let link of supportLinks"> {{ link }} </a>
+    </mat-nav-list>
+  </div>
+  <div class="grid-item">
+    <mat-nav-list>
+      <h2 matLine>OFERTY SPECJALNE</h2>
+      <a mat-list-item  *ngFor="let link of offersLinks"> {{ link }} </a>
+    </mat-nav-list>
+  </div>
+</div>
+<div class="footer"> Projekt</div>
