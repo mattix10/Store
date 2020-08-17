@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer.component';
 import { MaterialModule } from '../material.module';
 import { NavBarComponent } from './navbar.component';
+import { ShowImageDirective } from '../model/showImage.directive';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavBarComponent } from './navbar.component';
     CartDetailComponent,
     CheckoutComponent,
     FooterComponent,
-    NavBarComponent
+    NavBarComponent,
+    ShowImageDirective
   ],
   exports: [StoreComponent]
 })
