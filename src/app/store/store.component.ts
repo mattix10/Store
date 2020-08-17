@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store',
-  templateUrl: 'store.component.html'
+  templateUrl: 'store.component.html',
+  styleUrls: ['store.component.css']
 })
 
 export class StoreComponent {
@@ -44,5 +45,4 @@ export class StoreComponent {
   showCart() {
     this.router.navigateByUrl('/cart');
   }
-
 }
