@@ -13,19 +13,21 @@
   </div>
   <div class="icon-container">
     <a class="nav-icon" routerLink="/" (click)="showSearchPanel()">
-      <span class="material-icons">
+      <mat-icon class="material-icons">
         search
-      </span>
+      </mat-icon> 
     </a>
     <a class="nav-icon" routerLink="/cart">
-      <span class="material-icons">
+      <mat-icon class="material-icons" [matBadge]="cart.itemCount" matBadgeColor="warn">
         shopping_cart
-      </span>
+      </mat-icon> 
+        
+  
     </a>
     <a class="nav-icon" routerLink="/admin">
-      <span class="material-icons">
+      <mat-icon class="material-icons">
         admin_panel_settings
-      </span>
+      </mat-icon> 
     </a>
   </div>
 </nav>
