@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Cart } from '../model/cart.model';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +12,9 @@ export class NavBarComponent {
 
   searchPanelVisibility = false;
   searchValue = '';
+
+  constructor(public cart: Cart) {}
+
   showSearchPanel() {
     this.searchPanelVisibility = !this.searchPanelVisibility;
   }
