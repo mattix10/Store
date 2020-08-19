@@ -1,5 +1,22 @@
-<div class="pull-xs-right">
-  Koszyk:
-  <span *ngIf="cart.itemCount > 0"> {{ cart.itemCount }} produktów</span>
-  <span *ngIf="cart.itemCount === 0">pusty</span>
+<div class="container summary-container">
+  <div class="row summary-row">
+    <div class="col-8">Koszt produktów</div>
+    <div class="col-4">129.90</div>
+  </div>
+  <div class="row summary-row">
+    <div class="col-8">Dostawa</div>
+    <div class="col-4">0.00 zł</div>
+  </div>
+  <div class="row summary-row">
+    <div class="col-8"><p class="summary-text">Suma</p></div>
+    <div class="col-4"><p class="summary-text">{{cart.cartPrice}} zł</p></div>
+  </div>
+  <div class="container">
+    <div class="row summary-row">
+      <button mat-raised-button class="button-cart-white" routerLink="/checkout" [disabled]="cart.queues.length === 0">Do kasy</button>  
+    </div>
+    <div class="row summary-row-button">
+      <button mat-raised-button class="button-cart" routerLink="/store">Kontynuuj zakupy</button>
+    </div>
+  </div>
 </div>
