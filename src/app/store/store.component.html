@@ -6,9 +6,9 @@
   </button> -->
 </div>
   <div class="card-container">
-    <mat-card *ngFor="let product of products"  class="example-card">
-      <img [appShowImage]="product" mat-card-image>
-      <mat-card-header>
+    <mat-card *ngFor="let product of products"  class="example-card" (click)="showId(product.id)">
+      <img [appShowImage]="product" mat-card-image [routerLink]="['/product', product.id]">
+      <mat-card-header >
         <mat-card-title>{{product.name}}</mat-card-title>
         <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
         <h4 class="price-container">{{product.price}} zł</h4>
