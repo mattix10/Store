@@ -1,15 +1,9 @@
 <app-navbar></app-navbar>
-Menu:
-
-liczba kategorii: {{categories.length}}
-liczba produktów: {{products.length}}
-<button (click)="showCart()">Twój koszyk</button>
-<app-cart-summary></app-cart-summary>
 <div class="col-xs-3 p-a-1">
-  <button class="btn btn-block btn-outline-secondary" (click)="changeCategory()">Wszystkie</button>
+  <!-- <button class="btn btn-block btn-outline-secondary" (click)="changeCategory()">Wszystkie</button>
   <button *ngFor="let category of categories" class="btn btn-block btn-outline-dark" [class.active]="category == selectedCategory" (click)="changeCategory(category)">
     {{category}}
-  </button>
+  </button> -->
 </div>
   <div class="card-container">
     <mat-card *ngFor="let product of products"  class="example-card">
