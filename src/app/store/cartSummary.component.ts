@@ -3,7 +3,8 @@ import { Cart } from '../model/cart.model';
 
 @Component({
   selector: 'app-cart-summary',
-  templateUrl: 'cartSummary.component.html'
+  templateUrl: 'cartSummary.component.html',
+  styleUrls: ['cartSummary.component.css']
 })
 
 export class CartSummaryComponent {
