@@ -1,5 +1,5 @@
 .col-2 {
-  padding: 0 5px 5px 0;
+  padding: 0 5px 0 0;
 }
 
 .row .item-row{
@@ -66,7 +66,6 @@ p:last-of-type {
 
 .item-delete {
   display: flex;
-  padding-bottom: 10px;
 }
 
 .button-cart {
@@ -76,6 +75,7 @@ p:last-of-type {
   color: white;
 }
 
-.example-full-width {
-  width: 40px;
+.container-title {
+  margin-top: 10px;
+  text-align: center;
 }
