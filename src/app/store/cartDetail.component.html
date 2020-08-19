@@ -1,3 +1,18 @@
+<div class="container container-title">
+  <div class="row">
+    <div class="col-8">
+      <div class="container">
+        <h2 class="summary-title">Koszyk:
+          <span *ngIf="cart.itemCount > 0"> {{ cart.itemCount }} produktów</span>
+          <span *ngIf="cart.itemCount === 0">(pusty)</span>
+        </h2>
+      </div>
+    </div>
+    <div class="col-4">
+      <h2 class="summary-title">Podsumowanie zamówienia</h2>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -28,18 +43,17 @@
               <p>{{queue.product.price}} zł</p>
             </div>
             <div class="item-delete">
-              <button mat-raised-button class="button-cart" (click)="cart.removeLine(queue.product.id)">Usuń</button>
+              <button mat-raised-button 
+                      class="button-cart" 
+                      (click)="cart.removeLine(queue.product.id)">Usuń
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col">
-      cart.price
+      <app-cart-summary></app-cart-summary>
     </div>
   </div>
 </div>
-<div lass="text-xs-center">
-  <button class="btn btn-primary" routerLink="/store">Kontynuuj zakupy</button>
-  <button class="btn btn-secondary" routerLink="/checkout" [disabled]="cart.queues.length === 0">Do kasy</button>
-</div> 
