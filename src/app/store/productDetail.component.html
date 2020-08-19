@@ -12,6 +12,37 @@
       </div>
     </div>
     <div class="col-5">
+      <div class="container-product-info">
+        <div class="product-info product-name">
+          <p>{{product.name}}</p>
+        </div>
+        <div class="product-info product-category">
+          <p>{{product.category}}</p>
+        </div>
+        <div class="product-info product-price">
+          <p>{{product.price}} zł</p>
+        </div>
+        <div class="product-info product-description">
+          <p>{{product.description}}</p>
+        </div>
+        <div class="product-info product-size">
+          <p>Wybierz rozmiar
+            <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select></p>
+        </div>
+        <div class="product-info product-size-select">
+
+        </div>
+        <div class="product-info button-add-to-cart">
+          <button mat-raised-button 
+                  class="button-cart"
+                  (click)="addProductToCart(product)">Dodaj do koszyka</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
