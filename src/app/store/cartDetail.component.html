@@ -1,47 +1,45 @@
-Zawartość koszyka:
-<div class="m-a-1">
-  <h2 class="text-xs-center">Koszyk</h2>
-  <table class="table table-bordered table-striped p-a-1">
-    <thead>
-      <tr>
-        <th>Ilość</th>
-        <th>Produkt</th>
-        <th class="text-xs-right">Cena</th>
-        <th class="text-xs-right">Wartość</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngIf="cart.queues.length === 0">
-        <td colspan="4" class="text-cs-center">
-          Koszyk jest pusty
-        </td>
-      </tr>
-      <tr *ngFor="let queue of cart.queues">
-        <td>
-          <input type="number" class="form-control-sm"
-          [value]="queue.quantity"
-          (change)="cart.updateQuantity(queue.product, $event.target.value)"/>
-        </td>
-        <td>{{queue.product.name}}</td>
-        <td class="text-xs-right">
-          {{queue.product.price}}
-        </td>
-        <td class="text-xs-center">
-          <button class="btn btn-sm btn-danger" (click)="cart.removeLine(queue.product.id)">Usuń</button>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3" class="text-xs-right">Razem:</td>
-        <td class="text-xs-right">
-          {{cart.cartPrice}}
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="container">
+        <div class="row item-row" *ngFor="let queue of cart.queues">
+          <div class="col img-wrapper">
+            <img [appShowImage]="queue.product">
+          </div>
+          <div class="col-7">
+            <h2 class="item-title">{{queue.product.name}}</h2>
+            <p class="item-subtitle">{{queue.product.category}}</p>
+            <div class="item-details">
+                <p>{{queue.product.description}}</p>
+                <p>Rozmiar:</p>
+                <p>Ilość sztuk:
+                    <input 
+                      min="1"
+                      max="10" 
+                      type="number" 
+                      class="input-count"
+                      [value]="queue.quantity"
+                      (change)="cart.updateQuantity(queue.product, $event.target.value)"/>
+                </p>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="item-price">
+              <p>{{queue.product.price}} zł</p>
+            </div>
+            <div class="item-delete">
+              <button mat-raised-button class="button-cart" (click)="cart.removeLine(queue.product.id)">Usuń</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      cart.price
+    </div>
+  </div>
 </div>
 <div lass="text-xs-center">
   <button class="btn btn-primary" routerLink="/store">Kontynuuj zakupy</button>
   <button class="btn btn-secondary" routerLink="/checkout" [disabled]="cart.queues.length === 0">Do kasy</button>
-</div>
+</div> 
