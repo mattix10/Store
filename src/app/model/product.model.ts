@@ -5,5 +5,6 @@ export class Product {
     public category?: string,
     public description?: string,
     public price?: number,
-    public image?: Array<string>) {}
+    public image?: Array<string>,
+    public size?: string) {}
 }
