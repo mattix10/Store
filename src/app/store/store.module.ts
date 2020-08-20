@@ -12,6 +12,7 @@ import { MaterialModule } from '../material.module';
 import { NavBarComponent } from './navbar.component';
 import { ShowImageDirective } from '../model/showImage.directive';
 import { ProductDetailComponent } from './productDetail.component';
+import { MainComponent } from './main.component';
 
 
 @NgModule({
@@ -24,9 +25,10 @@ import { ProductDetailComponent } from './productDetail.component';
     FooterComponent,
     NavBarComponent,
     ShowImageDirective,
-    ProductDetailComponent
+    ProductDetailComponent,
+    MainComponent
   ],
-  exports: [StoreComponent]
+  exports: [MainComponent]
 })
 
 export class StoreModule { }
