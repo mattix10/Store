@@ -8,6 +8,7 @@ import { AuthGuard } from './auth.guard';
 import { ProductTableComponent } from './productTable.component';
 import { ProductEditorComponent } from './productEditor.component';
 import { OrderTableComponent } from './orderTable.component';
+import { MaterialModule } from '../material.module';
 
 const routing = RouterModule.forChild([
   { path: 'auth', component: AuthComponent },
@@ -23,7 +24,7 @@ const routing = RouterModule.forChild([
 ]);
 
 @NgModule({
-  imports: [CommonModule, FormsModule, routing],
+  imports: [CommonModule, FormsModule, routing, MaterialModule],
   providers: [AuthGuard],
   declarations: [AuthComponent, AdminComponent, ProductTableComponent,
     ProductEditorComponent, OrderTableComponent]
