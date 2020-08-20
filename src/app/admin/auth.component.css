@@ -1,0 +1,80 @@
+.container-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-height: 50vh ;
+}
+
+.auth-header {
+  text-align: center;
+}
+
+.auth-panel {
+  padding: 10px 20px;
+  background-color: rgb(214, 208, 208);
+  width: 350px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+}
+
+.container-button {
+  margin-top: 10px;
+}
+
+.row-button {
+  padding: 10px 10px 0 10px;
+}
+
+
+.button-auth {
+  color: white;
+  background-color: black;
+  width: 100%;
+}
+
+.button-auth-white {
+  color: black;
+  background-color: white;
+  width: 100%;
+}
+form {
+  padding: 5px;
+}
+.mat-form {
+  width: 100%;
+
+  /* padding: 5px 0; */
+}
+
+.input-auth {
+  font-size: 18px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px rgb(214, 208, 208) inset !important;
+}
+
+::ng-deep .mat-input-element {
+  caret-color: black!important;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: black!important;
+}
+
+::ng-deep .mat-form-field-underline {
+  background-color: black!important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: black!important;
+}
