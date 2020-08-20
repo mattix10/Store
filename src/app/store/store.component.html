@@ -1,13 +1,7 @@
-<app-navbar></app-navbar>
-<div class="col-xs-3 p-a-1">
-  <!-- <button class="btn btn-block btn-outline-secondary" (click)="changeCategory()">Wszystkie</button>
-  <button *ngFor="let category of categories" class="btn btn-block btn-outline-dark" [class.active]="category == selectedCategory" (click)="changeCategory(category)">
-    {{category}}
-  </button> -->
-</div>
+<div class="container">
   <div class="card-container">
-    <mat-card *ngFor="let product of products"  class="example-card" (click)="showId(product.id)">
-      <img [appShowImage]="product" mat-card-image [routerLink]="['/product', product.id]">
+    <mat-card *ngFor="let product of products"  class="example-card">
+      <img [appShowImage]="product" mat-card-image (click)="showProduct(product.id)" >
       <mat-card-header >
         <mat-card-title>{{product.name}}</mat-card-title>
         <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
@@ -26,5 +20,4 @@
       <option value="3">3 na stronie</option>
     </select>
   </div>
-<!-- </div> -->
-<app-footer></app-footer>
+</div>
