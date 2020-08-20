@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Cart } from '../model/cart.model';
-
+import { ProductRepository } from '../model/product.repository';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +10,11 @@ import { Cart } from '../model/cart.model';
 
 export class NavBarComponent {
 
-  searchPanelVisibility = false;
-  searchValue = '';
+  private searchPanelVisibility = false;
+  public searchValue = '';
+  public selectedCategory = null;
 
-  constructor(public cart: Cart) {}
+  constructor(public cart: Cart, public repository: ProductRepository) {}
 
   showSearchPanel() {
     this.searchPanelVisibility = !this.searchPanelVisibility;
@@ -29,4 +30,9 @@ export class NavBarComponent {
   searchProduct(value: string): any{
     this.searchValue = null;
   }
+
+  get categories(): string[] {
+    return this.repository.getCategories();
+  }
+
 }
