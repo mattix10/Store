@@ -5,7 +5,7 @@
   padding: 20px 0;
   margin-top: 10px;
   margin-bottom: 20px;
-  min-height: 50vh ;
+  min-height: 50vh;
 }
 
 .auth-header {
@@ -19,38 +19,12 @@
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.errorMessage {
-  text-align: center;
-  color: red;
-}
-
-.container-button {
-  margin-top: 10px;
-}
-
-.row-button {
-  padding: 10px 10px 0 10px;
-}
-
-
-.button-auth {
-  color: white;
-  background-color: black;
-  width: 100%;
-}
-
-.button-auth-white {
-  color: black;
-  background-color: white;
-  width: 100%;
-}
 form {
   padding: 5px;
 }
+
 .mat-form {
   width: 100%;
-
-  /* padding: 5px 0; */
 }
 
 .input-auth {
@@ -77,4 +51,29 @@ input:-webkit-autofill:active  {
 
 ::ng-deep .mat-form-field-ripple {
   background-color: black!important;
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+}
+
+.container-button {
+  margin-top: 10px;
+}
+
+.row-button {
+  padding: 10px 10px 0 10px;
+}
+
+.button-auth {
+  color: white;
+  background-color: black;
+  width: 100%;
+}
+
+.button-auth-white {
+  color: black;
+  background-color: white;
+  width: 100%;
 }
