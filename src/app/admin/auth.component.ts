@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../model/auth.service';
 
 @Component({
-  templateUrl: 'auth.component.html'
+  templateUrl: 'auth.component.html',
+  styleUrls: ['auth.component.css']
 })
 
 export class AuthComponent {
@@ -24,7 +25,7 @@ export class AuthComponent {
         this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
       })
     } else {
-      this.errorMessage = 'Nieprawdiłowe dane.';
+      this.errorMessage = 'Nieprawidłowe dane.';
     }
   }
 
