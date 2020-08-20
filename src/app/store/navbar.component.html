@@ -1,41 +1,38 @@
-<nav class="nav-container">
-  <div class="brand-logo" >
-    <span>MS SHOP</span>
-  </div>
-  <div class="links-container">
-    <ul class="nav-list">
-      <li><a class="links-categories" href="">SPODNIE</a></li>
-      <li><a class="links-categories" href="">KURTKI</a></li>
-      <li><a class="links-categories" href="">OBUWIE</a></li>
-      <li><a class="links-categories" href="">T-SHIRTY</a></li>
-      <li><a class="links-categories" href="">AKCESORIA</a></li>
-    </ul>
-  </div>
-  <div class="icon-container">
-    <a class="nav-icon" routerLink="/" (click)="showSearchPanel()">
-      <mat-icon class="material-icons">
-        search
-      </mat-icon> 
-    </a>
-    <a class="nav-icon" routerLink="/cart">
-      <mat-icon class="material-icons" [matBadge]="cart.itemCount" matBadgeColor="warn">
-        shopping_cart
-      </mat-icon> 
-        
-  
-    </a>
-    <a class="nav-icon" routerLink="/admin">
-      <mat-icon class="material-icons">
-        admin_panel_settings
-      </mat-icon> 
-    </a>
-  </div>
-</nav>
-<div [ngClass]="getClassName()">
-  <div class="search-container">
-    <input #searchbox class="search-input" placeholder="Szukaj produktu..." [value]="searchValue" (keyup.enter)="searchProduct(searchbox.value)">
-        <span class="material-icons">
+<div class="sticky">
+  <nav class="nav-container">
+    <div class="brand-logo" >
+      <span>MS SHOP</span>
+    </div>
+    <div class="links-container">
+      <ul class="nav-list">
+        <li *ngFor="let category of categories">
+          <a class="links-categories" [routerLink]="['category', category]">{{category}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="icon-container">
+      <a class="nav-icon" (click)="showSearchPanel()">
+        <mat-icon class="material-icons">
           search
-          </span>
+        </mat-icon> 
+      </a>
+      <a class="nav-icon" routerLink="/store/cart">
+        <mat-icon class="material-icons" [matBadge]="cart.itemCount" matBadgeColor="warn">
+          shopping_cart
+        </mat-icon> 
+      </a>
+      <a class="nav-icon" routerLink="/store/admin">
+        <mat-icon class="material-icons">
+          admin_panel_settings
+        </mat-icon> 
+      </a>
+    </div>
+  </nav>
+  <div [ngClass]="getClassName()">
+    <div class="search-container">
+      <input #searchbox class="search-input" placeholder="Szukaj produktu..." 
+              [value]="searchValue" (keyup.enter)="searchProduct(searchbox.value)">
+        <span class="material-icons">search</span>
+    </div>
   </div>
 </div>
