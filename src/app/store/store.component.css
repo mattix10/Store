@@ -1,3 +1,7 @@
+.container {
+  padding: 20px;
+}
+
 .example-card {
   max-width: 32%;
   display: inline-block;
