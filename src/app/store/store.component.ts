@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductRepository } from '../model/product.repository';
 import { Cart } from '../model/cart.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store',
@@ -17,7 +17,14 @@ export class StoreComponent {
 
   constructor(private repository: ProductRepository,
               private cart: Cart,
-              private router: Router) {}
+              private router: Router,
+              activeRoute: ActivatedRoute
+              ) {
+    activeRoute.params.subscribe(params => {
+      this.selectedCategory = params.category;
+      this.changeCategory(this.selectedCategory);
+    });
+    }
 
   get products(): Product[] {
     const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
@@ -38,11 +45,15 @@ export class StoreComponent {
   }
 
   addProductToCart(product: Product) {
-    console.log(product);
     this.cart.addLine(product);
   }
 
   showCart() {
     this.router.navigateByUrl('/cart');
   }
+
+  showProduct(id: string) {
+    this.router.navigateByUrl(`store/product/${id}`);
+  }
+
 }
