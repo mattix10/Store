@@ -7,14 +7,18 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [ CommonModule, MatButtonModule, MatGridListModule, MatListModule, MatRippleModule,
-             MatCardModule, MatBadgeModule, MatIconModule],
+             MatCardModule, MatBadgeModule, MatIconModule, MatFormFieldModule, MatInputModule,
+             MatSelectModule],
   declarations: [
   ],
   exports: [ MatButtonModule, MatGridListModule, MatListModule, MatRippleModule, MatCardModule,
-             MatBadgeModule, MatIconModule]
+             MatBadgeModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule]
 })
 
 export class MaterialModule { }
