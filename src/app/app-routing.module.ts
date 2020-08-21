@@ -10,14 +10,14 @@ import { MainComponent } from './store/main.component';
 
 const childRoutes: Routes = [
   
-  { path: 'product/:id', component: ProductDetailComponent},
+  { path: 'product/:id', component: ProductDetailComponent, resolve: {model: ModelResolver}},
   { path: 'cart', component: CartDetailComponent },
   { path: 'category/:category', component: StoreComponent},
   { path: 'checkout', component: CheckoutComponent },
   { path: '', component: StoreComponent},
-  { path: 'admin', loadChildren:  () => import('src/app/admin/admin.module').then(mod => mod.AdminModule)}
 ];
 const routes: Routes = [
+  { path: 'admin', loadChildren:  () => import('src/app/admin/admin.module').then(mod => mod.AdminModule)},
   { path: 'store', component: MainComponent, children: childRoutes },
   { path: '**', redirectTo: '/store' }
 ];
