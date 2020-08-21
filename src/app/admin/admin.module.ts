@@ -18,7 +18,7 @@ const routing = RouterModule.forChild([
       { path: 'products/:mode', component: ProductEditorComponent },
       { path: 'products', component: ProductTableComponent },
       { path: 'orders', component: OrderTableComponent },
-      { path: '**', redirectTo: 'products' }
+      { path: '**', redirectTo: 'orders' }
     ] },
   { path: '**', redirectTo: 'auth' }
 ]);
