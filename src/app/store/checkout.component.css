@@ -1,0 +1,43 @@
+.container-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.checkout-header {
+  text-align: center;
+}
+
+.form {
+  padding: 20px;
+  width: 500px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: rgb(224, 219, 219);
+}
+
+.mat-form {
+  width: 100%;
+}
+
+.container-button {
+  margin-top: 10px;
+}
+
+.row-button {
+  padding: 10px 10px 0 10px;
+}
+
+.button-auth {
+  color: white;
+  background-color: black;
+  width: 100%;
+}
+
+.button-auth-white {
+  color: black;
+  background-color: white;
+  width: 100%;
+}
