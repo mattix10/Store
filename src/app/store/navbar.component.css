@@ -26,6 +26,8 @@
 }
 
 .brand-logo span {
+  cursor: pointer;
+  outline: none;
   font-weight: 700;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 24px;
