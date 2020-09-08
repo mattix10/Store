@@ -7,7 +7,7 @@ import { Order } from './order.model';
 import { map } from 'rxjs/operators';
 
 const PROTOCOL = 'http';
-const PORT = 3500;
+const PORT = 3000;
 
 @Injectable()
 export class RestDataSource {
@@ -28,6 +28,7 @@ export class RestDataSource {
   }
 
   getProducts(): Observable<Product[]> {
+    console.log('elo')
     return this.http.get<Product[]>(this.baseUrl + 'products');
   }
 
