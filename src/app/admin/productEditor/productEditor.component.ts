@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Product } from '../model/product.model';
-import { ProductRepository } from '../model/product.repository';
+import { Product } from '../../model/product.model';
+import { ProductRepository } from '../../model/product.repository';
 import { NgForm } from '@angular/forms';
+
 
 @Component({
   templateUrl: 'productEditor.component.html'
@@ -11,6 +12,7 @@ import { NgForm } from '@angular/forms';
 export class ProductEditorComponent {
   editing = false;
   product: Product = new Product();
+
 
   constructor(private repository: ProductRepository,
               private router: Router,
@@ -21,6 +23,8 @@ export class ProductEditorComponent {
                     repository.getProduct(activeRoute.snapshot.params.id));
                 }
   }
+
+
 
   save(form: NgForm) {
     this.repository.saveProduct(this.product);

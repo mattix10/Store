@@ -13,9 +13,11 @@
   width:90%;
   margin: 0 5%;
 }
+
 mat-list-item {
  justify-content: center;
 }
+
 .mat-list-base.inline-list {
   display: flex;
   justify-content: center;
@@ -29,7 +31,6 @@ mat-panel-title h2 {
   margin: 0;
 }
 
-
 mat-expansion-panel {
   background-color: rgb(224, 219, 219);
 }
@@ -37,6 +38,7 @@ mat-expansion-panel {
 mat-expansion-panel {
   display: none;
 }
+
 h2 {
   visibility: visible;
 }
@@ -47,8 +49,6 @@ mat-list {
 .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
   background-color: rgb(224, 219, 219);
 }
-
-
 
 .forDesktop { 
   display:block;

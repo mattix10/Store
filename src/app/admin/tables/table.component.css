@@ -1,0 +1,62 @@
+.mat-elevation-z8 {
+  margin-left: 20%;
+  min-height:100vh;
+}
+
+table {
+  width: 100%;
+  overflow: auto;
+}
+
+th {
+  font-weight:550;
+  color: black;
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+  color:rgb(100, 98, 98)
+}
+
+td:nth-child(1) {
+  cursor: pointer;
+}
+
+.marked {
+  background-color: gainsboro;
+  color: black;
+}
+
+.btn-delete {
+  color: red;
+  min-width:80px;
+}
+
+.btn-action {
+  color:black;
+  min-width:80px;
+}
+@media (max-width: 992px) { 
+  .mat-elevation-z8 {
+    margin-left: 20%;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .mat-elevation-z8 {
+    width: 100%;
+    height: 100%;
+    margin: 50px 0 0 0;
+    overflow-x: visible;
+    box-shadow: none;
+  }
+  th {
+    position: relative;
+  }
+  
+  nsg-container {
+    min-width:60px;
+  }
+}

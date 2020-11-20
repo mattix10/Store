@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductRepository } from '../model/product.repository';
+import { ProductRepository } from '../../model/product.repository';
 
 @Component({
   selector: 'app-footer',
