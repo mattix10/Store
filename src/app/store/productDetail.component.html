@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    
+    <div class="col-sm-12 col-md-7">
       <div class="gallery">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">  
@@ -29,7 +30,8 @@
         </div>
       </div>
     </div>
-    <div class="col-5">
+
+    <div class="col-sm-12 col-md-5">
       <div class="container-product-info">
         <div class="product-info product-name">
           <p>{{product.name}}</p>
@@ -56,9 +58,7 @@
 
         </div>
         <div class="product-info button-add-to-cart">
-          <button mat-raised-button 
-                  class="button-cart"
-                  (click)="addProductToCart(product)">Dodaj do koszyka</button>
+          <button mat-raised-button class="button-cart tet-white" (click)="addProductToCart(product)">Dodaj do koszyka</button>
         </div>
       </div>
     </div>

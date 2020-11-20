@@ -1,14 +1,14 @@
 .container {
-  min-height: 70vh;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+
 .col-7 {
   padding:10px
 }
 
-.col-5 {
+.col-md-5 {
   padding: 10px;
   background-color: rgb(219, 219, 219);
   display: flex;
@@ -48,6 +48,7 @@
 .product-category {
   padding-top: 0px;
 }
+
 .product-price {
   font-size: 18px;
   font-weight: 550;
@@ -68,5 +69,20 @@ select {
 .button-cart {
   align-self: flex-end;
   background-color: black;
-  color: white;
 }
+
+@media (max-width: 575.98px) { 
+  .container {
+    width:90%;
+    margin:100px auto 0;
+  }
+
+  .container-product-info {
+    width: 94%;
+    margin: auto;
+  }
+  .product-info {
+    padding: 0;
+  }
+
+ }
