@@ -6,7 +6,8 @@ import { CartDetailComponent } from './store/cartDetail.component';
 import { ProductDetailComponent } from './store/productDetail.component';
 import { ModelResolver } from './model/model.resolver';
 import { MainComponent } from './store/main.component';
-
+import { AuthComponent } from './admin/auth.component';
+import { AuthGuard } from './admin/auth.guard';
 
 const childRoutes: Routes = [
   
@@ -17,13 +18,15 @@ const childRoutes: Routes = [
   { path: '', component: StoreComponent},
 ];
 const routes: Routes = [
-  { path: 'admin', loadChildren:  () => import('src/app/admin/admin.module').then(mod => mod.AdminModule)},
+  { path: 'auth', component: AuthComponent },
+  { path: 'admin', loadChildren:  () => import('src/app/admin/admin.module').then(mod => mod.AdminModule), canActivate: [AuthGuard]},
   { path: 'store', component: MainComponent, children: childRoutes },
   { path: '**', redirectTo: '/store' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard],
 })
 export class AppRoutingModule { }
