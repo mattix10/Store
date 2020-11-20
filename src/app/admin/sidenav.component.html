@@ -1,0 +1,24 @@
+<div class="bar">
+  <div class="icon-container">
+    <a class="icon-for-mobile" (click)="toggleClass()"  >
+      <mat-icon class="material-icons">
+        menu
+      </mat-icon> 
+    </a>
+  </div>
+</div>
+<div class="sidenav" [ngClass]="toggle ? 'show' : 'hide'">
+  <div class="brand-logo"  >
+    <span>MS SHOP</span>
+  </div>
+  <div matRipple class="links" routerLink="/admin/main/products" (click)="toggleClass()">
+    <span >Produkty</span>
+  </div>
+  <div matRipple class="links" routerLink="/admin/main/orders" (click)="toggleClass()">
+    <span>Zamówienia</span>
+  </div>
+  <div matRipple class="links" (click)="logout()">
+    <span>Wyloguj</span>
+  </div>
+</div>
+
