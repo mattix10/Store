@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Cart } from '../model/cart.model';
-import { ProductRepository } from '../model/product.repository';
+import { Cart } from '../../model/cart.model';
+import { ProductRepository } from '../../model/product.repository';
 
 @Component({
   selector: 'app-navbar',
