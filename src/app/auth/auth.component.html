@@ -17,7 +17,7 @@
             <button class="w-100 bg-black text-white" mat-button type="submit">Zaloguj</button>
           </div>
           <div class="row px-2 pt-2">
-            <button class="w-100 bg-white text-black" mat-button routerLink="/">Powróć</button>
+            <button class="w-100 bg-white text-black" mat-button (click)="backToStore($event)">Powróć</button>
           </div>
         </div>
       </form>

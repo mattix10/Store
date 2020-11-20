@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../model/auth.service';
+import { MaterialModule } from '../material.module';
 
 @Component({
   templateUrl: 'auth.component.html',
@@ -22,11 +23,16 @@ export class AuthComponent {
         console.log(response);
         window.localStorage.setItem('token', response['token']);
         this.router.navigate(['/admin/main']);
-        this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
+        // this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
       });
     } else {
       this.errorMessage = 'Nieprawidłowe dane.';
     }
+  }
+
+  backToStore(e) {
+    e.preventDefault();
+    this.router.navigateByUrl('/store')
   }
 
   logout() {}
