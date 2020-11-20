@@ -18,7 +18,12 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  loggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
   clear(): void{
+    window.localStorage.clear();
     this.datasource.auth_token = null;
   }
 }
