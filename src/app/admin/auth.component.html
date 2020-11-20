@@ -1,8 +1,8 @@
-<div class="container container-panel">
+<div class="container container-panel d-flex justify-content-center align-items-center">
   <div>
-    <h2 class="auth-header">Zaloguj się</h2>
-    <div class="auth-panel">
-      <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+    <h2 class="text-center">Zaloguj się</h2>
+    <div class="auth-panel p-3 mx-auto">
+      <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)" class="p-1">
           <mat-form-field class="mat-form">
             <mat-label>Nazwa użytkownika</mat-label>
               <input class="input-auth" matInput name="username" [(ngModel)]="username" required />
@@ -11,13 +11,13 @@
             <mat-label>Hasło</mat-label>
               <input class="input-auth" matInput type="password" name="password" [(ngModel)]="password" required />
           </mat-form-field>
-        <div class="errorMessage" *ngIf="errorMessage != null">{{errorMessage}}</div>
-        <div class="container-button">  
-          <div class="row row-button">
-            <button class="button-auth" mat-button type="submit">Zaloguj</button>
+        <div class="text-danger" *ngIf="errorMessage != null">{{errorMessage}}</div>
+        <div class="mt-2">  
+          <div class="row px-2 pt-2">
+            <button class="w-100 bg-black text-white" mat-button type="submit">Zaloguj</button>
           </div>
-          <div class="row row-button">
-            <button class="button-auth-white" mat-button routerLink="/">Powróć</button>
+          <div class="row px-2 pt-2">
+            <button class="w-100 bg-white text-black" mat-button routerLink="/">Powróć</button>
           </div>
         </div>
       </form>

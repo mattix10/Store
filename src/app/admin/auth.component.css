@@ -1,26 +1,12 @@
 .container-panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  min-height: 50vh;
-}
-
-.auth-header {
-  text-align: center;
+  height:70%;
 }
 
 .auth-panel {
-  padding: 10px 20px;
+  width: 90%;
+  min-width: 300px;
   background-color: rgb(214, 208, 208);
-  width: 350px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-form {
-  padding: 5px;
 }
 
 .mat-form {
@@ -53,27 +39,6 @@ input:-webkit-autofill:active  {
   background-color: black!important;
 }
 
-.errorMessage {
-  text-align: center;
-  color: red;
-}
-
-.container-button {
-  margin-top: 10px;
-}
-
-.row-button {
-  padding: 10px 10px 0 10px;
-}
-
-.button-auth {
-  color: white;
+.bg-black {
   background-color: black;
-  width: 100%;
-}
-
-.button-auth-white {
-  color: black;
-  background-color: white;
-  width: 100%;
 }
