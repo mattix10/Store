@@ -1,27 +1,76 @@
 <div class="grid-container">
+  
   <div class="grid-item">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 matLine>PRODUKTY</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
       <mat-nav-list>
-        <h2 matLine>PRODUKTY</h2>
-        <a mat-list-item  *ngFor="let link of categories"> {{ link }} </a>
+        <mat-list-item class="link" *ngFor="let link of categories"> {{ link }} </mat-list-item>
       </mat-nav-list>
+    </mat-expansion-panel>
+      
+    <mat-nav-list class="forDesktop">
+      <h2 matLine>PRODUKTY</h2>
+      <mat-list-item class="link" *ngFor="let link of categories"> {{ link }} </mat-list-item>
+    </mat-nav-list>
   </div>
+
   <div class="grid-item">
-    <mat-nav-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 matLine>O FIRMIE</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item class="link" *ngFor="let link of companyLinks"> {{ link }} </mat-list-item>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <mat-nav-list class="forDesktop">
       <h2 matLine>O FIRMIE</h2>
       <a mat-list-item *ngFor="let link of companyLinks"> {{ link }} </a>
     </mat-nav-list>
   </div>
+
   <div class="grid-item">
-    <mat-nav-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 matLine>WSPARCIE</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item class="link" *ngFor="let link of supportLinks"> {{ link }} </mat-list-item>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <mat-nav-list class="forDesktop">
       <h2 matLine>WSPARCIE</h2>
       <a mat-list-item  *ngFor="let link of supportLinks"> {{ link }} </a>
     </mat-nav-list>
   </div>
+
   <div class="grid-item">
-    <mat-nav-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 matLine>OFERTY SPECJALNE</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item class="link" *ngFor="let link of offersLinks"> {{ link }} </mat-list-item>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <mat-nav-list class="forDesktop">
       <h2 matLine>OFERTY SPECJALNE</h2>
       <a mat-list-item  *ngFor="let link of offersLinks"> {{ link }} </a>
     </mat-nav-list>
   </div>
+
 </div>
 <div class="footer"> Projekt</div>

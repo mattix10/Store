@@ -1,6 +1,10 @@
 .grid-container {
+  position: relative;
+  top: 100px;
   grid-template-columns: auto auto auto auto;
   display: grid;
+  width: 100%;
+  padding:0 5%;
   padding: 1% 8% 3% 12%;
   background-color: rgb(224, 219, 219);
 }
@@ -9,12 +13,77 @@
   width:90%;
   margin: 0 5%;
 }
+mat-list-item {
+ justify-content: center;
+}
+.mat-list-base.inline-list {
+  display: flex;
+  justify-content: center;
+}
 
 mat-nav-list h2 {
   padding: 5px 15px;
 }
 
+mat-panel-title h2 {
+  margin: 0;
+}
+
+
+mat-expansion-panel {
+  background-color: rgb(224, 219, 219);
+}
+
+mat-expansion-panel {
+  display: none;
+}
+h2 {
+  visibility: visible;
+}
+mat-list {
+  visibility: visible;
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background-color: rgb(224, 219, 219);
+}
+
+
+
+.forDesktop { 
+  display:block;
+}
+
 .footer {
   height: 50px;
   background-color: rgb(34, 34, 34);
+}
+
+@media (max-width: 767.98px) { 
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+  .grid-item {
+    width: 50%;
+    margin:0 auto;
+  }
+}
+
+@media (max-width: 575.98px) { 
+  mat-expansion-panel {
+    display: block;
+  }
+  .grid-container {
+    margin:0;
+    padding: 0;
+    width: 100%;
+    grid-template-columns: auto;
+  }
+  .grid-item {
+    width: 100%;
+  }
+
+  .forDesktop {
+    display: none;
+  }
 }
