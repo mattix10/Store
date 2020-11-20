@@ -4,10 +4,13 @@
   <p>Produkty zostaną wysłane jak najszybciej.</p>
   <button class="btn btn-primary" routerLink="/store">Powrót do sklepu</button>
 </div>
-<div class="container container-form">
+
+<div class="container container-form d-flex align-items-center justify-content-center">
   <div>
-    <h2 class="checkout-header">Dane do wysyłki</h2>
+    <h2 class="text-center">Dane do wysyłki</h2>
+
     <form #form="ngForm" *ngIf="!orderSent"  novalidate (ngSubmit)="submitOrder(form)" class="form">
+      
       <mat-form-field class="mat-form">
         <mat-label>Imię i nazwisko</mat-label>
         <input class="input" matInput  #name='ngModel' name="name" [(ngModel)]="order.name" required />
@@ -15,6 +18,7 @@
           Proszę podać imię i nazwisko.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field class="mat-form">
         <mat-label>Adres</mat-label>
         <input class="input" matInput #address="ngModel" name="address" [(ngModel)]="order.address" required />
@@ -22,6 +26,7 @@
           Proszę podać adres.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field class="mat-form">
         <mat-label>Miejscowość</mat-label>
         <input matInput class="input" #city="ngModel" name="city" [(ngModel)]="order.city" required/>
@@ -29,6 +34,7 @@
           Proszę podać miejscowość.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field class="mat-form">
         <mat-label>Województwo</mat-label>
         <mat-select #state="ngModel" name="state" [(ngModel)]="order.state" required >
@@ -38,6 +44,7 @@
           Proszę podać województwo.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field class="mat-form">
         <mat-label>Kod pocztowy</mat-label>
         <input class="input" matInput #zip="ngModel" name="zip" [(ngModel)]="order.zip" appZipPattern="\d{2}-\d{3}" required />
@@ -45,6 +52,7 @@
           Proszę podać kod pocztowy.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field class="mat-form">
         <mat-label>Kraj</mat-label>
         <input class="input" matInput name="country" [(ngModel)]="order.country" required />
@@ -52,6 +60,7 @@
           Proszę podać kraj.
         </mat-error>
       </mat-form-field>
+
       <div class="container-button">  
         <div class="row row-button">
           <button class="button-auth-white" mat-button type="submit">Złóż zamówienie</button>
@@ -60,6 +69,8 @@
           <button class="button-auth" mat-button routerLink="/">Powrót</button>
         </div>
       </div>
+
     </form>
+
   </div>
 </div>

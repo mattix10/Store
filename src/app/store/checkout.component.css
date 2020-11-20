@@ -1,19 +1,12 @@
 .container-form {
-  margin-top: 20px;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 70vh;
-}
-
-.checkout-header {
-  text-align: center;
 }
 
 .form {
   padding: 20px;
-  width: 500px;
+  width: 100%;
+  max-width:400px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background-color: rgb(224, 219, 219);
 }
