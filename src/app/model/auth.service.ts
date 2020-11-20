@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RestDataSource } from './rest.datasource';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -15,7 +14,11 @@ export class AuthService {
     return this.datasource.auth_token != null;
   }
 
-  clear() {
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
+
+  clear(): void{
     this.datasource.auth_token = null;
   }
 }
