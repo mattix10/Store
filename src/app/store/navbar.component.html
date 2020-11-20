@@ -1,16 +1,16 @@
-<div class="sticky">
-  <nav class="nav-container">
-    <div class="brand-logo" >
+<div class="nav-wrapper d-block w-100 fixed-top">
+  <nav class="d-flex align-items-stretch bg-white">
+    <div class="brand-logo d-flex align-items-center ml-2" >
       <span [routerLink]="['store']">MS SHOP</span>
     </div>
-    <div class="links-container">
+    <div class="links-container m-2 p-1 text-center font-medium">
       <ul class="nav-list">
         <li *ngFor="let category of categories">
           <a class="links-categories" [routerLink]="['category', category]">{{category}}</a>
         </li>
       </ul>
     </div>
-    <div class="icon-container">
+    <div class="icon-container m-2 p-1 text-center font-medium">
       <a class="nav-icon" (click)="showSearchPanel()">
         <mat-icon class="material-icons">
           search
@@ -21,13 +21,19 @@
           shopping_cart
         </mat-icon> 
       </a>
-      <a class="nav-icon" routerLink="/admin/auth">
+      <a class="nav-icon icon-for-desktop" routerLink="/admin/auth">
         <mat-icon class="material-icons">
           admin_panel_settings
         </mat-icon> 
       </a>
+      <a class="nav-icon icon-for-mobile" (click)="toggleClass()"  >
+        <mat-icon class="material-icons">
+          menu
+        </mat-icon> 
+      </a>
     </div>
   </nav>
+
   <div [ngClass]="getClassName()">
     <div class="search-container">
       <input #searchbox class="search-input" placeholder="Szukaj produktu..." 
@@ -35,4 +41,18 @@
         <span class="material-icons">search</span>
     </div>
   </div>
+</div>
+
+<div  [class.sidemenu-active]="activeSideMenu" class="sidemenu h-100 hide overflow-hidden">
+  <mat-list>
+    <div mat-subheader>Kategorie</div>
+    <mat-list-item  class="category-link ml-2" [routerLink]="['category', category]" (click)="toggleClass()" *ngFor="let category of categories">
+      {{category}}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Administracja</div>
+    <mat-list-item class="category-link ml-2" routerLink="/auth">
+      Zaloguj 
+    </mat-list-item>
+  </mat-list>
 </div>
