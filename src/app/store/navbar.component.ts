@@ -10,6 +10,7 @@ import { ProductRepository } from '../model/product.repository';
 
 export class NavBarComponent {
 
+  public activeSideMenu = false;
   private searchPanelVisibility = false;
   public searchValue = '';
   public selectedCategory = null;
@@ -25,6 +26,10 @@ export class NavBarComponent {
       'search-panel': this.searchPanelVisibility === true,
       'search-panel-hidden': this.searchPanelVisibility === false
     };
+  }
+
+  toggleClass() {
+    this.activeSideMenu = !this.activeSideMenu;
   }
 
   searchProduct(value: string): any{
