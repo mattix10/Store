@@ -6,6 +6,9 @@ import { StoreModule } from './store/store.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './admin/auth.guard';
+import { TokenInterceptorService } from './model/tokenInterceptor.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,12 @@ import { MaterialModule } from './material.module';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
