@@ -9,7 +9,7 @@
   </div>
   <div class="row summary-row">
     <div class="col-8"><p class="summary-text">Suma</p></div>
-    <div class="col-4"><p class="summary-text">{{cart.cartPrice}} zł</p></div>
+    <div class="col-4"><p class="summary-text">{{cart.cartPrice | currency:" PLN ":"zł "	}}</p></div>
   </div>
   <div class="container">
     <div class="row summary-row">
