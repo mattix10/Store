@@ -1,0 +1,31 @@
+.window-wrapper{
+    position: fixed;
+    top:88px;
+    right: 0;
+    z-index: 100;
+    width: 400px;
+    height:250px;
+    background-color: gainsboro;
+}
+
+.summary-title {
+    text-align: center;
+}
+.container-wrapper {
+    height:140px;
+}
+
+.b {
+    background-color: red;
+}
+
+.button-cart {
+    background-color: black;
+    color: white;
+  }
+@media (max-width: 575.98px) { 
+    .window-wrapper {
+        top: 50px;
+        width: 100%;
+    }
+}

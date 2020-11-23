@@ -1,0 +1,39 @@
+<div class="window-wrapper container">
+    
+    <div class="row d-flex align-items-center justify-content-center">
+      <h2 class="summary-title mt-2">Koszyk:
+        <span *ngIf="cart.itemCount === 0; else second">(pusty)</span>
+        <ng-template #second>
+          <span *ngIf="cart.itemCount < 5;else third"> {{ cart.itemCount }} produkty</span>
+        </ng-template>
+        <ng-template #third>
+          <span *ngIf="cart.itemCount >= 5"> {{ cart.itemCount }} produktów</span>
+        </ng-template>
+      </h2>
+    </div>
+
+    <div class="row container-wrapper overflow-auto">
+      <div class="row mt-1 mx-1 bg-white" *ngFor="let queue of cart.queues">
+        <div class="col-6 img-wrapper">
+          <img class="w-100" [appShowImage]="queue.product">
+        </div>
+        <div class="col-6">
+          <p class="item-title">{{queue.product.name}}</p>
+          <p class="item-subtitle">{{queue.product.category}}</p>
+          <div class="item-details">
+            <p>Ilość sztuk:
+                <input min="1" max="1" type="number" class="input-count" [value]="queue.quantity"
+                            (change)="cart.updateQuantity(queue.product, $event.target.value)"/>
+            </p>
+            <p>{{queue.product.price}} zł</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-2 d-flex align-items-center justify-content-center">
+      <button mat-raised-button class="button-cart w-100" routerLink="/store/cart" (click)="closeWindow()">Przejdź do koszyka</button>
+    </div>
+</div>
+
+    
