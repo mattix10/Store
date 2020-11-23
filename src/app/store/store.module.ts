@@ -13,7 +13,6 @@ import { NavBarComponent } from './navbar/navbar.component';
 import { ShowImageDirective } from '../model/showImage.directive';
 import { ProductDetailComponent } from './productDetail/productDetail.component';
 import { MainComponent } from './main/main.component';
-import { AdvComponent } from './advertisement/adv.component';
 import { NgbdCarouselBasicModule } from './advertisement/carousel-basic.module';
 import { CartWindowComponent } from './cartWindow/cartWindow.component';
 
@@ -30,7 +29,6 @@ import { CartWindowComponent } from './cartWindow/cartWindow.component';
     ShowImageDirective,
     ProductDetailComponent,
     MainComponent,
-    AdvComponent,
     CartWindowComponent
   ],
   exports: [MainComponent]
