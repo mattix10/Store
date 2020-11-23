@@ -32,3 +32,21 @@ mat-card-actions {
   background-color: black;
   color: white;
 }
+
+@media (max-width: 767.98px) { 
+  .container {
+    margin-top: 100px;
+  }
+  .example-card {
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    margin: 100px auto 0;
+  }
+  .example-card {
+    max-width: 100%;
+  }
+ }
