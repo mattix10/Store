@@ -8,7 +8,7 @@ export class Cart {
   public queues: CartLine[] = [];
 
   addLine(product: Product, quantity: number = 1) {
-    const queue = this.queues.find(q => q.product.id === product.id);
+    const queue = this.queues.find(q => q.product._id === product._id);
     if (queue !== undefined) {
       queue.quantity += quantity;
     } else {
@@ -27,7 +27,7 @@ export class Cart {
   }
 
   updateQuantity(product: Product, quantity: number) {
-    const queue = this.queues.find(q => q.product.id === product.id);
+    const queue = this.queues.find(q => q.product._id === product._id);
     if (queue !== undefined) {
       queue.quantity = Number(quantity);
     }
