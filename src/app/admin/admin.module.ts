@@ -2,17 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AuthComponent } from './auth.component';
 import { AdminComponent } from './admin.component';
-import { AuthGuard } from './auth.guard';
-import { ProductTableComponent } from './productTable.component';
-import { ProductEditorComponent } from './productEditor.component';
-import { OrderTableComponent } from './orderTable.component';
+import { ProductTableComponent } from './tables/productTable.component';
+import { ProductEditorComponent } from './productEditor/productEditor.component';
+import { OrderTableComponent } from './tables/orderTable.component';
 import { MaterialModule } from '../material.module';
-
+import { SideNavComponent } from './sidenav/sidenav.component';
 const routing = RouterModule.forChild([
-  { path: 'auth', component: AuthComponent },
-  { path: 'main', component: AdminComponent, canActivate: [AuthGuard],
+  { path: 'main', component: AdminComponent,
     children: [
       { path: 'products/:mode/:id', component: ProductEditorComponent },
       { path: 'products/:mode', component: ProductEditorComponent },
@@ -25,8 +22,7 @@ const routing = RouterModule.forChild([
 
 @NgModule({
   imports: [CommonModule, FormsModule, routing, MaterialModule],
-  providers: [AuthGuard],
-  declarations: [AuthComponent, AdminComponent, ProductTableComponent,
-    ProductEditorComponent, OrderTableComponent]
+  declarations: [ AdminComponent, ProductTableComponent,
+    ProductEditorComponent, OrderTableComponent, SideNavComponent],
 })
 export class AdminModule {}
