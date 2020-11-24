@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from './store/store.component';
-import { CheckoutComponent } from './store/checkout.component';
-import { CartDetailComponent } from './store/cartDetail.component';
-import { ProductDetailComponent } from './store/productDetail.component';
+import { CheckoutComponent } from './store/checkout/checkout.component';
+import { CartDetailComponent } from './store/cartDetail/cartDetail.component';
+import { ProductDetailComponent } from './store/productDetail/productDetail.component';
 import { ModelResolver } from './model/model.resolver';
-import { MainComponent } from './store/main.component';
-import { AuthComponent } from './admin/auth.component';
-import { AuthGuard } from './admin/auth.guard';
+import { MainComponent } from './store/main/main.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const childRoutes: Routes = [
   
