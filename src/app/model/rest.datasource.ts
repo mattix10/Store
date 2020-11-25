@@ -61,6 +61,14 @@ export class RestDataSource {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
 
+  searchProduct(productName: string): Observable<any> {
+    if (productName) {
+      let params = new HttpParams();
+      params = params.append('productName', productName);
+      return this.http.get<any[]>(`${this.baseUrl}store`, {params});
+    }
+  }
+
   private getOptions() {
     return {
       headers: new HttpHeaders({
