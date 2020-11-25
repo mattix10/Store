@@ -6,7 +6,7 @@ import { RestDataSource } from './rest.datasource';
 export class ProductRepository {
   private products: Product[] = [];
   private categories: string[] = [];
-
+  private searchedProducts: [] = [];
   constructor(private dataSource: RestDataSource) {
     dataSource.getProducts().subscribe(data => {
       this.products = data;
@@ -47,5 +47,15 @@ export class ProductRepository {
         this.products.splice(this.products
             .findIndex(p => p.id == id), 1);
       })
+  }
+
+  searchProduct(productName: string) {
+    this.dataSource.searchProduct(productName).subscribe(p => {
+      this.searchedProducts = p;
+    });
+  }
+
+  getSearchedProducts() {
+    return this.searchedProducts;
   }
 }
