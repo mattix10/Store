@@ -3,6 +3,7 @@ import { Product } from '../model/product.model';
 import { ProductRepository } from '../model/product.repository';
 import { Cart } from '../model/cart.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-store',
@@ -12,24 +13,35 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class StoreComponent {
   public selectedCategory = null;
-  public productsPerPage = 5;
+  public productsPerPage = 15;
   public selectedPage = 1;
+  private query;
+  public routerUrl: string;
 
-  constructor(private repository: ProductRepository,
-              private cart: Cart,
-              private router: Router,
-              activeRoute: ActivatedRoute
-              ) {
-    activeRoute.params.subscribe(params => {
-      this.selectedCategory = params.category;
-      this.changeCategory(this.selectedCategory);
+  constructor(private repository: ProductRepository, private cart: Cart, private router: Router, activeRoute: ActivatedRoute) {
+    activeRoute.queryParams.subscribe(query => {
+      if (query.productName) {
+        this.query = query.productName;
+        this.repository.searchProduct(this.query);
+      }
     });
+    activeRoute.params.subscribe(params => {
+      if (params.category) {
+        this.selectedCategory = params.category;
+        this.changeCategory(this.selectedCategory);
+      }
+    });
+    this.routerUrl = this.router.url;
     }
 
   get products(): Product[] {
-    const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
-    return this.repository.getProducts(this.selectedCategory)
-    .slice(pageIndex, pageIndex + this.productsPerPage);
+    if (this.query != undefined) {
+      return this.repository.getSearchedProducts();
+    } else {
+      const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+      return this.repository.getProducts(this.selectedCategory)
+      .slice(pageIndex, pageIndex + this.productsPerPage);
+    }
   }
 
   get categories(): string[] {
