@@ -8,9 +8,10 @@ import { ModelResolver } from './model/model.resolver';
 import { MainComponent } from './store/main/main.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './guard/auth.guard';
+import { SearchedProductsComponent } from './store/searchedProducts/searchedProducts.component';
 
 const childRoutes: Routes = [
-  
+  { path: 'search', component: StoreComponent },
   { path: 'product/:id', component: ProductDetailComponent, resolve: {model: ModelResolver}},
   { path: 'cart', component: CartDetailComponent },
   { path: 'category/:category', component: StoreComponent},
