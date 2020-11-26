@@ -16,7 +16,7 @@
           search
         </mat-icon> 
       </a>
-      <a class="nav-icon" routerLink="/store/cart">
+      <a class="nav-icon"  (click)="showCartWindow()">
         <mat-icon class="material-icons" [matBadge]="cart.itemCount" matBadgeColor="warn">
           shopping_cart
         </mat-icon> 
@@ -36,15 +36,15 @@
 
   <div [ngClass]="getClassName()">
     <div class="search-container">
-      <input #searchbox class="search-input" placeholder="Szukaj produktu..." 
-              [value]="searchValue" (keyup.enter)="searchProduct(searchbox.value)">
-        <span class="material-icons">search</span>
+      <input #searchbox class="search-input" placeholder="Szukaj produktu..." #searchInput
+              [value]="searchValue" (keydown.enter)="searchProduct(searchInput.value)">
+          <span class="material-icons">search</span>
     </div>
   </div>
 </div>
 
 <div  [class.sidemenu-active]="activeSideMenu" class="sidemenu h-100 hide overflow-hidden">
-  <mat-list>
+  <mat-list class="mt-6">
     <div mat-subheader>Kategorie</div>
     <mat-list-item  class="category-link ml-2" [routerLink]="['category', category]" (click)="toggleClass()" *ngFor="let category of categories">
       {{category}}
@@ -55,4 +55,7 @@
       Zaloguj 
     </mat-list-item>
   </mat-list>
+</div>
+<div>
+  <app-cart-window [activeCartWindow]="activeCartWindow" (closed)="showCartWindow()"></app-cart-window>
 </div>
