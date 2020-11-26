@@ -1,11 +1,24 @@
 .window-wrapper{
     position: fixed;
-    top:88px;
+    top:84px;
     right: 0;
-    z-index: 100;
+    z-index: 3;
     width: 400px;
     height:250px;
     background-color: gainsboro;
+    opacity:1;
+    transition: opacity 0.3s ease-in-out ;
+}
+
+.cart-window {
+    position: fixed;
+    top:88px;
+    right: 0;
+    z-index: 3;
+    width: 400px;
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.3s ease-in-out ;
 }
 
 .summary-title {
