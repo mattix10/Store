@@ -2,8 +2,8 @@ const express = require('express')
 const jwt = require('jsonwebtoken');
 const router = express.Router({ mergeParams: true });
 const mongoose = require('mongoose');
-const User = require('./user');
-var Order = require('./orders.model');
+const User = require('../models/user');
+const Order = require('../models/orders.model');
 const bodyParser = require('body-parser');
 const { nextTick } = require('process');
 
