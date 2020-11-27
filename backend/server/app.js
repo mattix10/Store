@@ -2,10 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose  = require('./mongoose')
 const bodyParser = require('body-parser');
-var Product = require('./products.model');
+const Product = require('../models/products.model');
 const config = require ('./dbconfig');
 const api = require('./api');
-const Order = require('./orders.model')
+const Order = require('../models/orders.model');
+const { db } = require('./dbconfig');
+const dbconfig = require('./dbconfig');
+const { text } = require('express');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -33,9 +36,14 @@ app.post('/products', (req, res) => {
   })
 })
 
-app.post('/products/:id', (req, res) => {
-  let newProduct = new Product({
-      name: req.body.name
+app.get('/store', (req, res) => {
+
+  productName = req.query.productName;
+  searchText = {$text: { $search: productName}}
+  query = { name: searchText};
+  Product.find(example, (err, data) => {
+    Product.create
+    res.send(data);
   })
 })
 
