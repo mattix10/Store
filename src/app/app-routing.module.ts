@@ -8,7 +8,6 @@ import { ModelResolver } from './model/model.resolver';
 import { MainComponent } from './store/main/main.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './guard/auth.guard';
-import { SearchedProductsComponent } from './store/searchedProducts/searchedProducts.component';
 
 const childRoutes: Routes = [
   { path: 'search', component: StoreComponent },
@@ -26,7 +25,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: "top"
+  })],
   exports: [RouterModule],
   providers: [AuthGuard],
 })
