@@ -8,6 +8,7 @@ import { ModelResolver } from './model/model.resolver';
 import { MainComponent } from './store/main/main.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './guard/auth.guard';
+import { AboutComponent } from './store/about/about.component';
 
 const childRoutes: Routes = [
   { path: 'search', component: StoreComponent },
@@ -15,6 +16,7 @@ const childRoutes: Routes = [
   { path: 'cart', component: CartDetailComponent },
   { path: 'category/:category', component: StoreComponent},
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'about', component: AboutComponent},
   { path: '', component: StoreComponent},
 ];
 const routes: Routes = [
@@ -26,7 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: "top"
+    scrollPositionRestoration: 'top'
   })],
   exports: [RouterModule],
   providers: [AuthGuard],
