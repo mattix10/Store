@@ -1,12 +1,12 @@
 .container-form {
+  margin-top: 100px;
   margin-bottom: 20px;
   min-height: 70vh;
 }
 
 .form {
   padding: 20px;
-  width: 100%;
-  max-width:400px;
+  max-width: 400px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background-color: rgb(224, 219, 219);
 }
@@ -23,14 +23,12 @@
   padding: 10px 10px 0 10px;
 }
 
-.button-auth {
+.button-black {
   color: white;
   background-color: black;
-  width: 100%;
 }
 
-.button-auth-white {
+.button-white {
   color: black;
   background-color: white;
-  width: 100%;
 }

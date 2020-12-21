@@ -1,17 +1,19 @@
-<div *ngIf="orderSent" class="m-a-1 text-xs-center">
-  <h2>Dziękujemy!</h2>
-  <p>Zamówienie zostało złożone.</p>
-  <p>Produkty zostaną wysłane jak najszybciej.</p>
-  <button class="btn btn-primary" routerLink="/store">Powrót do sklepu</button>
-</div>
+
 
 <div class="container container-form d-flex align-items-center justify-content-center">
-  <div>
-    <h2 class="text-center">Dane do wysyłki</h2>
 
-    <form #form="ngForm" *ngIf="!orderSent"  novalidate (ngSubmit)="submitOrder(form)" class="form">
+  <div *ngIf="orderSent" class="m-a-1 text-center">
+    <h2>Dziękujemy!</h2>
+    <p>Zamówienie zostało złożone.</p>
+    <p>Produkty zostaną wysłane jak najszybciej.</p>
+    <button class="button-black" mat-button routerLink="/store">Powrót do sklepu</button>
+  </div>
+  <div *ngIf="!orderSent">
+    <h2 class="text-center" >Dane do wysyłki</h2>
+
+    <form #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="form w-100">
       
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Imię i nazwisko</mat-label>
         <input class="input" matInput  #name='ngModel' name="name" [(ngModel)]="order.name" required />
         <mat-error *ngIf="submitted" class="text-danger">
@@ -19,7 +21,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Adres</mat-label>
         <input class="input" matInput #address="ngModel" name="address" [(ngModel)]="order.address" required />
         <mat-error *ngIf="submitted && address.invalid" class="text-danger">
@@ -27,7 +29,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Miejscowość</mat-label>
         <input matInput class="input" #city="ngModel" name="city" [(ngModel)]="order.city" required/>
         <mat-error *ngIf="submitted && city.invalid" class="text-danger">
@@ -35,7 +37,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Województwo</mat-label>
         <mat-select #state="ngModel" name="state" [(ngModel)]="order.state" required >
           <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
@@ -45,7 +47,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Kod pocztowy</mat-label>
         <input class="input" matInput #zip="ngModel" name="zip" [(ngModel)]="order.zip" appZipPattern="\d{2}-\d{3}" required />
         <mat-error *ngIf="submitted && zip.invalid" class="text-danger">
@@ -53,7 +55,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="mat-form">
+      <mat-form-field class="w-100">
         <mat-label>Kraj</mat-label>
         <input class="input" matInput name="country" [(ngModel)]="order.country" required />
         <mat-error *ngIf="submitted" class="text-danger">
@@ -63,10 +65,10 @@
 
       <div class="container-button">  
         <div class="row row-button">
-          <button class="button-auth-white" mat-button type="submit">Złóż zamówienie</button>
+          <button class="button-white w-100" mat-button type="submit">Złóż zamówienie</button>
         </div>
         <div class="row row-button">
-          <button class="button-auth" mat-button routerLink="/">Powrót</button>
+          <button class="button-black w-100" mat-button routerLink="/">Powrót</button>
         </div>
       </div>
 
