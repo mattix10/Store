@@ -4,18 +4,18 @@
     
     <div class="col-sm-12 col-md-8 ">
       <div class="container">
-        <h2 class="summary-title mt-4">Koszyk:
+        <h2 class="summary-title text-center mt-4">Koszyk:
           <span *ngIf="cart.itemCount > 0"> {{ cart.itemCount }} produktów</span>
           <span *ngIf="cart.itemCount === 0">(pusty)</span>
         </h2>
       </div>
      
       <div class="row item-row my-3 mx-1 px-1 py-2" *ngFor="let queue of cart.queues">
-        <div class="col my-0 mx-auto">
+        <div class="col p-0 m-0">
           <img class="w-100" [appShowImage]="queue.product">
         </div>
         <div class="col-6">
-          <h2 class="item-title">{{queue.product.name}}</h2>
+          <p class="item-title">{{queue.product.name}}</p>
           <p class="item-subtitle">{{queue.product.category}}</p>
           <div class="item-details">
             <p>{{queue.product.description}}</p>
@@ -28,18 +28,18 @@
         </div>
 
         <div class=" col-sm col">
-          <div class="item-price">
+          <div class="item-price h-50 text-right p-1">
             <p>{{queue.product.price}} zł</p>
           </div>
-          <div class="item-delete">
-            <button mat-raised-button class="button-cart" (click)="cart.removeLine(queue.product.id)">Usuń</button>
+          <div class="d-flex h-50 text-center">
+            <button mat-raised-button class="button-cart w-100 text-white" (click)="cart.removeLine(queue.product.id)">Usuń</button>
           </div>
         </div>
       </div>
     </div>
     
     <div class="col mt-4">
-      <h2 class="summary-title">Podsumowanie</h2>
+      <h2 class="text-center">Podsumowanie</h2>
       <app-cart-summary></app-cart-summary>
     </div>
 
