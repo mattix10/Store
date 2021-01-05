@@ -19,12 +19,12 @@ export class RestDataSource {
   }
 
   authenticate(user: string, pass: string): Observable<boolean> {
-    return this.http.post<any>(this.baseUrl + 'api/login', {
+    return this.http.post<any>(this.baseUrl + 'auth', {
       email: user, password: pass });
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl + 'products');
+    return this.http.get<Product[]>(this.baseUrl + 'api/products');
   }
 
   saveProduct(product: Product): Observable<Product> {
@@ -33,17 +33,16 @@ export class RestDataSource {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}products/${product._id}`,
+    return this.http.put<Product>(`${this.baseUrl}api/products/${product._id}`,
       product, this.getOptions());
   }
 
   deleteProduct(_id: number): Observable<Product> {
-    return this.http.delete<Product>(`${this.baseUrl}products/${_id}`,
+    return this.http.delete<Product>(`${this.baseUrl}api/products/${_id}`,
       this.getOptions());
   }
 
   updateOrder(order: Order): Observable<Order> {
-    console.log('tutaj')
     return this.http.put<Order>(`${this.baseUrl}api/orders/${order._id}`,
       order, this.getOptions());
   }
@@ -58,7 +57,7 @@ export class RestDataSource {
   }
 
   saveOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(this.baseUrl + 'orders', order);
+    return this.http.post<Order>(this.baseUrl + 'api/orders', order);
   }
 
   searchProduct(productName: string): Observable<any> {
