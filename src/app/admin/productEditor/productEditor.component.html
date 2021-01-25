@@ -1,27 +1,44 @@
-<!-- <div class="bgprimary p-a-1" [class.bg-warning]="editing">
-  <h5>{{editing ? "Edycja" : "Dodawanie"}} produktu</h5>
+<div class="modal d-none w-100 h-100 fixed overflow-auto" [class.d-block]="openModal==true" [class.d-none]="openModal==false">
+  <div class="modal-content relative m-auto p-3">
+    <h1 class="text-center ">Edytuj produkt</h1>
+
+    <div *ngIf="choosenProduct != undefined" class="d-md-flex">
+      <div class="d-flex img-wrapper  mx-auto">
+        <img class="w-100 m-auto" src="assets/{{choosenProduct.image[0]}}.jpg">
+      </div>
+      
+      <div class="d-flex w-100">
+      <form novalidate #form="ngForm" (ngSubmit)="save()" class="w-100">
+        <div class="form-group">
+          <label>Produkt</label>
+          <input class="form-control" name="name" [(ngModel)]="choosenProduct.name" />
+        </div>
+
+        <div class="form-group">
+          <label>Kategoria</label>
+          <input class="form-control" name="category" [(ngModel)]="choosenProduct.category" />
+        </div>
+
+        <div class="form-group">
+          <label>Opis</label>
+          <textarea class="form-control" name="description" [(ngModel)]="choosenProduct.description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Cena</label>
+          <input class="form-control" name="price" [(ngModel)]="choosenProduct.price" />
+        </div>
+
+        <div class="d-flex justify-content-between ">
+          <button type="reset" class="w-40 text-black mr-1" mat-button routerLink="/admin/main/products" (click)="close()">
+            Anuluj
+          </button>
+          <button type="submit" class="w-40 bg-black text-white" mat-button (click)="save()">Zapisz</button>
+        </div>
+
+      </form>
+      </div>
+
+    </div>
+  </div>
 </div>
-<form novalidate #form="ngForm" (ngSubmit)="save(form)">
-  <div class="form-group">
-    <label>Produkt</label>
-    <input class="class-control" name="name" [(ngModel)]="product.name" />
-  </div>
-  <div class="form-group">
-    <label>Kategoria</label>
-    <input class="form-control" name="category" [(ngModel)]="product.category" />
-  </div>
-  <div class="form-group">
-    <label>Opis</label>
-    <textarea class="form-control" name="description" [(ngModel)]="product.description"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Cena</label>
-    <input class="form-control" name="price" [(ngModel)]="product.price" />
-  </div>
-  <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
-    {{editing ? "Zapisz" : "Dodaj"}}
-  </button>
-  <button type="reset" class="btn btn-secondary" routerLink="/admin/main/products">
-    Anuluj
-  </button>
-</form> -->
