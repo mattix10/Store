@@ -7,16 +7,19 @@
 * [Setup](#setup)
 
 ## General info
-This is my first bigger Angular project - Online Store. Creating this web-app I have learned how one of the most popular JS framework works and how to use it. I wrote a backend in Node.js and choose MongoDB to store data, so you can easily modify and delete items in real.
+This is my first bigger Angular project - Online Store. Creating this web-app I have learned how one of the most popular JS framework works and how to use it. I wrote a backend in Node.js and choose MongoDB to store data, so you can easily modify and delete items..
 
-## Overwiew
+## Overview
 In this app you can:
 * preview clothes and click it to show details
 
 
 * add item to cart and show its content and next fill a form order
+
 ![Algorithm schema](./src/assets/screens_github/summary.jpg)
+
 * log in as an admin, check orders and products. Additionaly you can modify products details(without images) and delete it.
+
 ![Algorithm schema](./src/assets/screens_github/edit.jpg)
 
 ## Technologies
