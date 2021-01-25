@@ -1,5 +1,5 @@
 # Store 
-![Algorithm schema](./src/assets/screens_github/jackets.jpg.jpg)
+![Algorithm schema](./src/assets/screens_github/jackets.jpg)
 ## Table of contents
 * [General info](#general-info)
 * [Overview](#overwiev)
