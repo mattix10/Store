@@ -1,33 +1,25 @@
-import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Product } from '../../model/product.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductRepository } from '../../model/product.repository';
-import { NgForm } from '@angular/forms';
-
 
 @Component({
-  templateUrl: 'productEditor.component.html'
+  selector: 'app-productEditor',
+  templateUrl: 'productEditor.component.html',
+  styleUrls: ['productEditor.component.css'],
 })
-
 export class ProductEditorComponent {
-  editing = false;
-  product: Product = new Product();
+  @Input() choosenProduct;
+  @Input() openModal;
+  @Output() openModalEvent = new EventEmitter();
 
+  constructor(private repository: ProductRepository) {}
 
-  constructor(private repository: ProductRepository,
-              private router: Router,
-              activeRoute: ActivatedRoute) {
-                this.editing = activeRoute.snapshot.params.mode === 'edit';
-                if (this.editing) {
-                  Object.assign(this.product,
-                    repository.getProduct(activeRoute.snapshot.params.id));
-                }
+  close() {
+    this.openModal = false;
+    this.openModalEvent.emit(this.openModal);
   }
 
-
-
-  save(form: NgForm) {
-    this.repository.saveProduct(this.product);
-    this.router.navigateByUrl('/admin/main/products');
+  save() {
+    this.repository.saveProduct(this.choosenProduct);
+    this.close();
   }
 }
