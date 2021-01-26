@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container w-100">
   
   <div class="grid-item">
     <mat-expansion-panel>
@@ -8,13 +8,15 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <mat-list-item class="link" *ngFor="let link of categories"> {{ link }} </mat-list-item>
+        <a routerLink="/store/about">
+          <mat-list-item class="link" *ngFor="let link of categories"> {{ link }} </mat-list-item>
+        </a>
       </mat-nav-list>
     </mat-expansion-panel>
       
     <mat-nav-list class="forDesktop">
       <h2 matLine>PRODUKTY</h2>
-      <mat-list-item class="link" *ngFor="let link of categories"> {{ link }} </mat-list-item>
+      <a mat-list-item class="link" *ngFor="let link of categories" routerLink="/store/about"> {{ link }} </a>
     </mat-nav-list>
   </div>
 
@@ -26,13 +28,13 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <mat-list-item class="link" *ngFor="let link of companyLinks"> {{ link }} </mat-list-item>
+          <a mat-list-item class="link" *ngFor="let link of companyLinks" routerLink="/store/about" >{{link}} </a>
       </mat-nav-list>
     </mat-expansion-panel>
 
     <mat-nav-list class="forDesktop">
       <h2 matLine>O FIRMIE</h2>
-      <a mat-list-item *ngFor="let link of companyLinks"> {{ link }} </a>
+      <a mat-list-item *ngFor="let link of companyLinks" routerLink="/store/about"> {{ link }} </a>
     </mat-nav-list>
   </div>
 
@@ -44,13 +46,13 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <mat-list-item class="link" *ngFor="let link of supportLinks"> {{ link }} </mat-list-item>
+          <a mat-list-item class="link" *ngFor="let link of supportLinks">{{link}}</a>
       </mat-nav-list>
     </mat-expansion-panel>
 
     <mat-nav-list class="forDesktop">
       <h2 matLine>WSPARCIE</h2>
-      <a mat-list-item  *ngFor="let link of supportLinks"> {{ link }} </a>
+      <a mat-list-item  *ngFor="let link of supportLinks" routerLink="/store/about"> {{ link }} </a>
     </mat-nav-list>
   </div>
 
@@ -62,13 +64,13 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <mat-list-item class="link" *ngFor="let link of offersLinks"> {{ link }} </mat-list-item>
-      </mat-nav-list>
+          <mat-list-item class="link" *ngFor="let link of offersLinks" routerLink="/store/about"> {{ link }} </mat-list-item>
+        </mat-nav-list>
     </mat-expansion-panel>
 
     <mat-nav-list class="forDesktop">
       <h2 matLine>OFERTY SPECJALNE</h2>
-      <a mat-list-item  *ngFor="let link of offersLinks"> {{ link }} </a>
+      <a mat-list-item  *ngFor="let link of offersLinks" routerLink="/store/about"> {{ link }} </a>
     </mat-nav-list>
   </div>
 
