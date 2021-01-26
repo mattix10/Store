@@ -13,19 +13,14 @@ export class CartWindowComponent {
   @Output()
   closed: EventEmitter<string> = new EventEmitter<string>();
   @Input()
-  activeCartWindow;
-    // public activeCartWindow = false;
-
+  activeCartWindow: boolean;
 
   constructor(public cart: Cart) {}
 
   closeWindow() {
     this.closed.emit();
   }
-
-  // showCartWindow() {
-  //   this.activeCartWindow = !this.activeCartWindow;
-  // }
+  
   getClassName() {
     return {
       'window-wrapper': this.activeCartWindow === true,
