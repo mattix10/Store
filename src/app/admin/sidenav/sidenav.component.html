@@ -1,23 +1,23 @@
-<div class="bar">
+<div class="bar w-100 fixed-top">
   <div class="icon-container">
     <a class="icon-for-mobile" (click)="toggleClass()"  >
-      <mat-icon class="material-icons">
+      <mat-icon class="material-icons d-block d-sm-none  float-right mt-2 mr-2">
         menu
       </mat-icon> 
     </a>
   </div>
 </div>
-<div class="sidenav" [ngClass]="toggle ? 'show' : 'hide'">
-  <div class="brand-logo"  >
+<div class="sidenav h-100 fixed-top" [ngClass]="toggle ? 'show' : 'hide'">
+  <div class="brand-logo d-flex align-items-center justify-content-center ml-2 py-3 w-100"  >
     <span>MS SHOP</span>
   </div>
-  <div matRipple class="links" routerLink="/admin/main/products" (click)="toggleClass()">
+  <div matRipple class="d-flex links align-items-center justify-content-center py-sm-3 py-2 w-100" routerLink="/admin/main/products" (click)="toggleClass()">
     <span >Produkty</span>
   </div>
-  <div matRipple class="links" routerLink="/admin/main/orders" (click)="toggleClass()">
+  <div matRipple class="d-flex links align-items-center justify-content-center py-sm-3 py-2 w-100" routerLink="/admin/main/orders" (click)="toggleClass()">
     <span>Zamówienia</span>
   </div>
-  <div matRipple class="links" (click)="logout()">
+  <div matRipple class="d-flex links align-items-center justify-content-center py-sm-3 py-2 w-100" (click)="logout()">
     <span>Wyloguj</span>
   </div>
 </div>
