@@ -2,7 +2,7 @@
   <div [ngClass]="getClassName()" class="container">
   
       <div class="row d-flex align-items-center justify-content-center">
-        <h2 class="summary-title mt-2">Koszyk:
+        <h2 class="text-center mt-2">Koszyk:
           <span *ngIf="cart.itemCount === 0; else second">(pusty)</span>
           <ng-template #second>
             <span *ngIf="cart.itemCount < 5; else third"> {{ cart.itemCount }} produkty</span>
@@ -14,19 +14,17 @@
       </div>
   
       <div class="row container-wrapper overflow-auto">
-        <div class="row mt-1 mx-1 bg-white" *ngFor="let queue of cart.queues">
-          <div class="col-6 img-wrapper">
-            <img class="w-100" [appShowImage]="queue.product">
+        <div class="row mt-1 mx-1 bg-white h-auto p-1" *ngFor="let queue of cart.queues">
+          <div class="col-5 img-wrapper">
+            <img class="wrap px-1 m-auto" [appShowImage]="queue.product">
           </div>
-          <div class="col-6">
-            <p class="item-title">{{queue.product.name}}</p>
-            <p class="item-subtitle">{{queue.product.category}}</p>
-            <div class="item-details">
-              <p>Ilość sztuk:
-                  <input min="1" max="1" type="number" class="input-count" [value]="queue.quantity"
-                              (change)="cart.updateQuantity(queue.product, $event.target.value)"/>
-              </p>
-              <p>{{queue.product.price}} zł</p>
+          <div class="col-7">
+            <p class="item-title mt-1 m-0">{{queue.product.name}}</p>
+            <p class="item-subtitle m-0">{{queue.product.category}}</p>
+            <div class="item-details my-1">
+              <p class="my-0 py-0">Ilość sztuk: {{queue.quantity}}</p>
+              <p class="my-0">Rozmiar: {{queue.product.size}}</p>
+              <p class="my-0 item-price">{{queue.product.price}} zł</p>
             </div>
           </div>
         </div>
