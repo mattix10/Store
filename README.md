@@ -13,6 +13,7 @@ This is my first bigger Angular project - Online Store. Creating this web-app I 
 In this app you can:
 * preview clothes and click it to show details
 
+![Algorithm schema](./src/assets/screens_github/shoe.jpg)
 
 * add item to cart and show its content and next fill a form order
 
