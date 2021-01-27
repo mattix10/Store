@@ -5,6 +5,7 @@
 * [Overview](#overwiev)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [ToDo](#todo)
 
 ## General info
 This is my first bigger Angular project - Online Store. Creating this web-app I have learned how one of the most popular JS framework works and how to use it. I wrote a backend in Node.js and choose MongoDB to store data, so you can easily modify and delete items..
@@ -47,6 +48,9 @@ To run server use:
 $ cd ../backend/server
 $ node app.js
 ```
+
+## ToDo
+* refactor code(delete unuseful method, whitespaces, comments)
 
 ## Inspiration
 Inspiration to making this app was an simple example in Adam Freeman's book - "Angular. Profesjonalne Techniki Programowania". I extended it by creating all views, adding new components, library, authorization, connecting with database and more...
