@@ -30,13 +30,13 @@ export class OrderRepository {
   updateOrder(order: Order) {
     this.dataSource.updateOrder(order).subscribe(order => {
       this.orders.splice(this.orders.
-        findIndex(o => o.id === order.id), 1, order);
+        findIndex(o => o.id === order._id), 1, order);
     });
   }
 
   deleteOrder(id: number) {
     this.dataSource.deleteOrder(id).subscribe(order => {
-      this.orders.splice(this.orders.findIndex(o => id === o.id));
+      this.orders.splice(this.orders.findIndex(o => id === o._id));
     });
   }
 }
