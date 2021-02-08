@@ -20,7 +20,6 @@ export class AuthComponent {
     if (form.valid) {
       this.auth.authenticate(this.username, this.password)
       .subscribe(response => {
-        console.log(response);
         window.localStorage.setItem('token', response['token']);
         this.router.navigate(['/admin/main']);
         // this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
@@ -35,5 +34,4 @@ export class AuthComponent {
     this.router.navigateByUrl('/store')
   }
 
-  logout() {}
 }
