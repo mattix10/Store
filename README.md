@@ -50,8 +50,11 @@ $ node app.js
 ```
 
 ## ToDo
+<<<<<<< HEAD
 * refactor code (delete whitespaces, commented code, unuseful methods)
 * add upload images for admin
+=======
+
 
 ## Inspiration
 Inspiration to making this app was an simple example in Adam Freeman's book - "Angular. Profesjonalne Techniki Programowania". I extended it by creating all views, adding new components, library, authorization, connecting with database and more...
