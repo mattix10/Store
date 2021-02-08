@@ -1,23 +1,26 @@
-<div class="container">
+<ngbd-carousel-basic *ngIf="routerUrl == '/store'" class="carousel mt-3"></ngbd-carousel-basic>
+<div class="container my-5">
   <div class="card-container">
-    <mat-card *ngFor="let product of products"  class="example-card">
-      <img [appShowImage]="product" mat-card-image (click)="showProduct(product.id)" >
-      <mat-card-header >
-        <mat-card-title>{{product.name}}</mat-card-title>
-        <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
-        <h4 class="price-container">{{product.price}} zł</h4>
+    <mat-card *ngFor="let product of getproducts()" class="example-card mx-1 my-2">
+      <div class="img-wrapper">
+        <img [appShowImage]="product" mat-card-image (click)="showProduct(product._id)"/>
+      </div>
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+        <h4 class="price-container">{{ product.price }} zł</h4>
       </mat-card-header>
       <mat-card-actions>
         <button  mat-raised-button class="button-cart" (click)="addProductToCart(product)">Do koszyka</button>
       </mat-card-actions>
     </mat-card>
   </div>
-   
-  <div class="form-inline pull-xs-left m-r-1"> -->
-    <select class="form-control" [value]="productsPerPage"
-        (change)="changePageSize($event.target.value)">
-      <option value="2">2 na stronie</option>
-      <option value="3">3 na stronie</option>
+
+  <div class="row p-2 mr-3 float-right">
+    <select (change)="changePageSize($event.target.value)" class="p-1">
+      <option value="5">5 na stronie</option>
+      <option value="10">10 na stronie</option>
+      <option value="15" selected>15 na stronie</option>
     </select>
   </div>
 </div>
