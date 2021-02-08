@@ -1,9 +1,8 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductRepository } from '../model/product.repository';
 import { Cart } from '../model/cart.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-store',
@@ -17,7 +16,7 @@ export class StoreComponent {
   public selectedPage = 1;
   private query;
   public routerUrl: string;
-
+  
   constructor(private repository: ProductRepository, private cart: Cart, private router: Router, activeRoute: ActivatedRoute) {
     activeRoute.queryParams.subscribe(query => {
       if (query.productName) {
@@ -34,7 +33,7 @@ export class StoreComponent {
     this.routerUrl = this.router.url;
     }
 
-  get products(): Product[] {
+  getproducts(): Product[] {
     if (this.query != undefined) {
       return this.repository.getSearchedProducts();
     } else {
