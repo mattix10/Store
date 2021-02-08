@@ -16,7 +16,8 @@ th {
 
 td {
   font-size: 14px;
-  color:rgb(100, 98, 98)
+  color:rgb(100, 98, 98);
+  cursor: pointer;
 }
 
 td:nth-child(1) {
@@ -37,7 +38,53 @@ td:nth-child(1) {
   color:black;
   min-width:80px;
 }
+
+h1 {
+  font-weight: 550;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-red {
+  background-color: rgb(218, 6, 6);
+}
+
+.bg-gainsboro {
+  background-color: gainsboro;
+}
+
+label {
+  color: gray;
+}
+
+
+@-webkit-keyframes animatetop {
+  from {
+    top:-300px; 
+    opacity:0
+  } 
+  to {
+    top:0; 
+    opacity:1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top:-300px; 
+    opacity:0
+  }
+  to {
+    top:0;
+    opacity:1
+  }
+}
+
+
 @media (max-width: 992px) { 
+
   .mat-elevation-z8 {
     margin-left: 20%;
     box-shadow: none;
@@ -45,13 +92,15 @@ td:nth-child(1) {
 }
 
 @media (max-width: 575.98px) { 
+
   .mat-elevation-z8 {
-    width: 100%;
+
     height: 100%;
     margin: 50px 0 0 0;
     overflow-x: visible;
     box-shadow: none;
   }
+
   th {
     position: relative;
   }
