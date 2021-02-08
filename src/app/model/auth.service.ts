@@ -18,7 +18,7 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  loggedIn() {
+  loggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
