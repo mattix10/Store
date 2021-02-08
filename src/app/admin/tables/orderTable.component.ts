@@ -4,17 +4,20 @@ import { Order } from '../../model/order.model';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource} from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { RestDataSource } from '../../model/rest.datasource';
 
 @Component({
   templateUrl: 'orderTable.component.html',
-  styleUrls: ['table.component.css']
+  styleUrls: ['table.component.css'],
 })
 export class OrderTableComponent implements OnInit {
-  private showShipped = false;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatTable) tableReference: MatTable<any>;
+
   public dataSource: any;
-  public selectedProduct;
+  public selectedProduct: object;
   public orders: any[];
   public displayedColumns: string[] = [
     'name',
@@ -26,43 +29,33 @@ export class OrderTableComponent implements OnInit {
     'cart.queues[0].product.price',
     'cart.itemCount',
     'cart.cartPrice',
-    'id'
+    'id',
   ];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) tableReference: MatTable<any>;
-
-  constructor(private repository: OrderRepository, private restDataSource: RestDataSource) {}
+  constructor(
+    private repository: OrderRepository,
+    private restDataSource: RestDataSource
+  ) {}
 
   ngOnInit() {
-    this.restDataSource.getOrders().subscribe( res => {
-       this.orders = res;
-       this.dataSource = new MatTableDataSource<any>(this.orders);
-       this.dataSource.paginator = this.paginator;
-       this.dataSource.sort = this.sort;
-      //  this.tableReference.renderRows();
-     });
-   }
+    this.refresh();
+  }
 
-  // getOrders(): Order[] {
-  //   console.log(this.repository.getOrders());
-  //   return this.repository.getOrders()
-  //     .filter(o => this.showShipped || !o.shipped);
-  // }
-
-  markShipped(id: string) {
-    console.log(id);
-    // this.restDataSource.getOrder(id).subscribe
-    // order.shipped = true;
-    // this.repository.updateOrder(order);
+  refresh() {
+    this.restDataSource.getOrders().subscribe((res) => {
+      this.orders = res;
+      this.dataSource = new MatTableDataSource<any>(this.orders);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   delete(id: number) {
     this.repository.deleteOrder(id);
+    this.refresh();
   }
 
-  getSelected(product) {
+  getSelected(product): any {
     return product.name == this.selectedProduct;
   }
 }
