@@ -5,7 +5,8 @@ export class Product {
     public name?: string,
     public category?: string,
     public description?: string,
+    public size?: number,
     public price?: number,
-    public image?: Array<string>,
-    public size?: string) {}
+    public image?: Array<string>
+    ) {}
 }
