@@ -6,7 +6,7 @@ import { Cart } from './cart.model';
 import { Order } from './order.model';
 import { map } from 'rxjs/operators';
 
-const PROTOCOL = 'http';
+const PROTOCOL = 'https';
 const PORT = 3000;
 
 @Injectable()
