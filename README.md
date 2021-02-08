@@ -50,10 +50,8 @@ $ node app.js
 ```
 
 ## ToDo
-<<<<<<< HEAD
 * refactor code (delete whitespaces, commented code, unuseful methods)
 * add upload images for admin
-=======
 
 
 ## Inspiration
