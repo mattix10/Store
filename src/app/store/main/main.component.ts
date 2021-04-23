@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from '../navbar/navbar.component'
 
 @Component({
   selector: 'app-main',
-  templateUrl: 'main.component.html'
+  templateUrl: 'main.component.html',
+  styleUrls: ['main.component.css'],
 })
-export class MainComponent { }
+export class MainComponent {}
