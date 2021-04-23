@@ -3,13 +3,17 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const xss = require("xss-clean");
+const path = require("path");
 const mongoose = require("./server");
 const productRouter = require("../routes/product.routes");
 const orderRouter = require("../routes/order.routes");
 const storeRouter = require("../routes/store.routes");
 
 const app = express();
-
+app.use(express.static(__dirname + "/dist/project-store"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/dist/myapp/index.html"));
+});
 app.use(helmet());
 app.use(xss());
 app.use(express.json());
