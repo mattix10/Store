@@ -7,13 +7,17 @@ import { Product } from './product.model';
 
 @Injectable()
 export class ModelResolver {
-  constructor(private model: ProductRepository, private dataSource: RestDataSource) {}
+  constructor(
+    private model: ProductRepository,
+    private dataSource: RestDataSource
+  ) {}
 
-  resolve(route: ActivatedRouteSnapshot,
-          state: RouterStateSnapshot): Observable<Product[]> {
-             if (this.model.getProducts.length === 0) {
-              console.log('wczytuje');
-              return this.dataSource.getProducts();
-             }
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<Product[]> {
+    if (this.model.getProducts.length === 0) {
+      return this.dataSource.getProducts();
+    }
   }
 }

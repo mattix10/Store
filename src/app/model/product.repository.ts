@@ -37,7 +37,6 @@ export class ProductRepository {
         .saveProduct(product)
         .subscribe((p) => this.products.push(p));
     } else {
-      console.log('elo');
       this.dataSource.updateProduct(product).subscribe((p) => {
         this.products.splice(
           this.products.findIndex((p) => p.id == product.id),
