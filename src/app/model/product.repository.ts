@@ -8,20 +8,23 @@ export class ProductRepository {
   private categories: string[] = [];
   private searchedProducts: [] = [];
   constructor(private dataSource: RestDataSource) {
-    dataSource.getProducts().subscribe(data => {
+    dataSource.getProducts().subscribe((data) => {
       this.products = data;
-      this.categories = data.map(p => p.category)
-        .filter((c, index, array) => array.indexOf(c) == index).sort();
+      this.categories = data
+        .map((p) => p.category)
+        .filter((c, index, array) => array.indexOf(c) == index)
+        .sort();
     });
   }
 
   getProducts(category: string = null): Product[] {
-    return this.products
-      .filter(p => category == null || category == p.category);
+    return this.products.filter(
+      (p) => category == null || category == p.category
+    );
   }
 
   getProduct(id): Product {
-    return this.products.find(p => p._id == id);
+    return this.products.find((p) => p._id == id);
   }
 
   getCategories(): string[] {
@@ -29,28 +32,33 @@ export class ProductRepository {
   }
 
   saveProduct(product: Product) {
-    if (product.id == null || product.id == 0) {
-      this.dataSource.saveProduct(product)
-        .subscribe(p => this.products.push(p));
+    if (product._id == null) {
+      this.dataSource
+        .saveProduct(product)
+        .subscribe((p) => this.products.push(p));
     } else {
-      this.dataSource.updateProduct(product)
-        .subscribe(p => {
-          this.products.splice(this.products
-            .findIndex(p => p.id == product.id), 1, product);
-        });
+      console.log('elo');
+      this.dataSource.updateProduct(product).subscribe((p) => {
+        this.products.splice(
+          this.products.findIndex((p) => p.id == product.id),
+          1,
+          product
+        );
+      });
     }
   }
 
   deleteProduct(id: number) {
-    this.dataSource.deleteProduct(id)
-      .subscribe(p => {
-        this.products.splice(this.products
-            .findIndex(p => p.id == id), 1);
-      })
+    this.dataSource.deleteProduct(id).subscribe((p) => {
+      this.products.splice(
+        this.products.findIndex((p) => p.id == id),
+        1
+      );
+    });
   }
 
   searchProduct(productName: string) {
-    this.dataSource.searchProduct(productName).subscribe(p => {
+    this.dataSource.searchProduct(productName).subscribe((p) => {
       this.searchedProducts = p;
     });
   }
