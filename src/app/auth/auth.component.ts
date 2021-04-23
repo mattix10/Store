@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../model/auth.service';
@@ -6,9 +6,8 @@ import { MaterialModule } from '../material.module';
 
 @Component({
   templateUrl: 'auth.component.html',
-  styleUrls: ['auth.component.css']
+  styleUrls: ['auth.component.css'],
 })
-
 export class AuthComponent {
   public username: string;
   public password: string;
@@ -18,12 +17,15 @@ export class AuthComponent {
 
   authenticate(form: NgForm) {
     if (form.valid) {
-      this.auth.authenticate(this.username, this.password)
-      .subscribe(response => {
-        window.localStorage.setItem('token', response['token']);
-        this.router.navigate(['/admin/main']);
-        // this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
-      });
+      this.auth.authenticate(this.username, this.password).subscribe(
+        (response) => {
+          window.localStorage.setItem('token', response['token']);
+          this.router.navigate(['/admin/main']);
+        },
+        () => {
+          this.errorMessage = 'Uwierzytelnienie zakończyło się niepowodzeniem.';
+        }
+      );
     } else {
       this.errorMessage = 'Nieprawidłowe dane.';
     }
@@ -31,7 +33,6 @@ export class AuthComponent {
 
   backToStore(e) {
     e.preventDefault();
-    this.router.navigateByUrl('/store')
+    this.router.navigateByUrl('/store');
   }
-
 }
