@@ -10,7 +10,7 @@ const storeRouter = require("../routes/store.routes");
 
 const app = express();
 
-app.use(hemlet());
+app.use(helmet());
 app.use(xss());
 app.use(express.json());
 dotenv.config({ path: "./config.env" });
