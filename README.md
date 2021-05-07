@@ -8,7 +8,7 @@
 * [ToDo](#todo)
 
 ## General info
-This is my first bigger Angular project - Online Store. Creating this web-app I have learned how one of the most popular JS framework works and how to use it. I wrote a backend in Node.js and choose MongoDB to store data, so you can easily modify and delete items..
+This is my first bigger Angular project - Online Store. Creating this web-app I have learned how one of the most popular JS framework works and how to use it. Additionally, I wrote a backend in Node.js and choose MongoDB to store data, so you can easily modify and delete items..
 
 ## Overview
 In this app you can:
@@ -52,6 +52,7 @@ $ node app.js
 ## ToDo
 * refactor code (delete whitespaces, commented code, unuseful methods)
 * add upload images for admin
+* use prettier to improve code view
 
 
 ## Inspiration
