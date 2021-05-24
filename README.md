@@ -1,5 +1,5 @@
 # Store 
-![Algorithm schema](./src/assets/screens_github/jackets.jpg)
+![Page view - jackets](./src/assets/screens_github/jackets.jpg)
 ## Table of contents
 * [General info](#general-info)
 * [Overview](#overwiev)
@@ -14,15 +14,15 @@ This is my first bigger Angular project - Online Store. Creating this web-app I 
 In this app you can:
 * preview clothes and click it to show details
 
-![Algorithm schema](./src/assets/screens_github/shoe.jpg)
+![Page view - shoes](./src/assets/screens_github/shoe.jpg)
 
 * add item to cart and show its content and next fill a form order
 
-![Algorithm schema](./src/assets/screens_github/summary.jpg)
+![Page view - summary](./src/assets/screens_github/summary.jpg)
 
 * log in as an admin, check orders and products. Additionaly you can modify products details(without images) and delete it.
 
-![Algorithm schema](./src/assets/screens_github/edit.jpg)
+![Page view - edit product](./src/assets/screens_github/edit.jpg)
 
 ## Technologies
 Project is created with:
